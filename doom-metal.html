@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Evolution of Doom Metal — 1970–2026</title>
+<meta name="description" content="A visual record of doom metal: from Birmingham factory riffs in 1970 to funeral tempos in 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080808;
+  --bg-panel:#0f0f10;
+  --bg-panel-2:#161617;
+  --line:#262626;
+  --line-soft:#1a1a1a;
+  --ink:#f2f1ee;
+  --ink-dim:#9c9c9c;
+  --ink-faint:#5c5c5c;
+  --accent:#e01324;
+  --accent-bright:#ff2f3d;
+  --accent-dim:#3d0a0e;
+  --focus:#ff2f3d;
+  --maxw:1240px;
+  --script:'Caveat',cursive;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:800;}
+p{margin:0;}
+a{color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+img{max-width:100%;display:block;}
+.display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:0.01em;text-transform:uppercase;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ===== NAV ===== */
+.topnav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,10,9,0.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.topnav-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;gap:6px;height:56px;overflow-x:auto;
+  scrollbar-width:none;
+}
+.topnav-inner::-webkit-scrollbar{display:none;}
+.brand{
+  font-family:'Anton',sans-serif;font-size:15px;letter-spacing:0.04em;
+  color:var(--ink);text-decoration:none;white-space:nowrap;margin-right:14px;
+  border-right:1px solid var(--line);padding-right:14px;
+}
+.brand span{color:var(--accent-bright);}
+.navlink{
+  background:none;border:none;color:var(--ink-dim);font-size:13px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;padding:8px 10px;
+  border-bottom:2px solid transparent;display:flex;align-items:center;gap:5px;
+}
+.navlink::before{content:"▸";color:var(--accent);font-size:10px;opacity:0;transition:opacity .12s;}
+.navlink:hover{color:var(--ink);}
+.navlink:hover::before,.navlink.active::before{opacity:1;}
+.navlink.active{color:var(--ink);border-bottom-color:var(--accent);}
+.nav-search-btn{
+  margin-left:auto;flex:0 0 auto;background:var(--bg-panel);border:1px solid var(--line);
+  color:var(--ink);width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+}
+.nav-search-btn:hover{border-color:var(--accent);}
+
+/* ===== SEARCH OVERLAY ===== */
+.search-overlay{
+  position:fixed;inset:0;z-index:100;background:rgba(6,6,5,0.92);
+  display:none;flex-direction:column;padding:80px 20px 20px;
+}
+.search-overlay.open{display:flex;}
+.search-box{max-width:760px;margin:0 auto;width:100%;}
+.search-box input{
+  width:100%;background:transparent;border:none;border-bottom:2px solid var(--accent);
+  color:var(--ink);font-family:'Anton',sans-serif;font-size:clamp(28px,6vw,52px);
+  padding:10px 0;letter-spacing:0.01em;
+}
+.search-box input:focus{outline:none;}
+.search-hint{color:var(--ink-faint);font-size:13px;margin-top:10px;letter-spacing:0.03em;}
+.search-close{
+  position:absolute;top:22px;right:24px;background:none;border:1px solid var(--line);
+  color:var(--ink);width:38px;height:38px;font-size:18px;
+}
+.search-results{max-width:760px;margin:26px auto 0;width:100%;overflow-y:auto;flex:1;}
+.search-result{
+  display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line-soft);
+  background:none;border-left:none;border-right:none;border-top:none;width:100%;text-align:left;color:var(--ink);
+}
+.search-result:hover{color:var(--accent-bright);}
+.search-result .sr-year{font-family:'Anton',sans-serif;color:var(--ink-faint);font-size:15px;width:52px;flex:0 0 auto;}
+.search-result .sr-meta{color:var(--ink-faint);font-size:13px;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;padding:120px 0 60px;border-bottom:1px solid var(--line);
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(193,64,31,0.10),transparent 55%),
+    repeating-linear-gradient(115deg,rgba(255,255,255,0.015) 0px,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 60px);
+}
+.hero-kicker{
+  font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-bright);
+  font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+}
+.hero-kicker::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block;}
+.hero h1{
+  font-size:clamp(48px,9.5vw,128px);line-height:0.92;letter-spacing:0.001em;
+}
+.hero h1 .line2{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink);}
+.hero-script{
+  font-family:var(--script);font-size:clamp(30px,5vw,54px);color:var(--accent-bright);
+  font-weight:700;margin-top:-10px;margin-left:6px;transform:rotate(-3deg);display:inline-block;
+}
+.hero-sub{
+  max-width:540px;margin-top:18px;font-size:19px;color:var(--ink-dim);font-weight:500;
+}
+.hero-quote{
+  margin-top:30px;font-size:15px;color:var(--ink-faint);font-style:italic;font-family:'Inter',sans-serif;
+  border-left:2px solid var(--accent-dim);padding-left:14px;max-width:460px;
+}
+.hero-range{
+  margin-top:46px;display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;
+}
+.hero-range .num{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);color:var(--ink);}
+.hero-range .dash{color:var(--accent);font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);}
+.hero-strip{
+  margin-top:54px;display:flex;overflow-x:auto;border-top:1px solid var(--line);
+  scrollbar-width:none;
+}
+.hero-strip::-webkit-scrollbar{display:none;}
+.hero-strip .cell{
+  flex:0 0 auto;padding:18px 22px;border-right:1px solid var(--line);min-width:118px;
+}
+.hero-strip .cell .yr{font-family:'Anton',sans-serif;font-size:20px;color:var(--accent-bright);}
+.hero-strip .cell .lbl{font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;margin-top:3px;}
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-panel);
+  overflow:hidden;padding:16px 0;
+}
+.marquee-track{display:flex;width:max-content;animation:marquee-scroll 34s linear infinite;}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
+.marquee-track span{
+  font-family:'Anton',sans-serif;font-size:22px;color:var(--ink-faint);white-space:nowrap;
+  padding:0 22px;display:flex;align-items:center;gap:22px;letter-spacing:0.02em;
+}
+.marquee-track span::after{content:"✳";color:var(--accent);font-size:14px;}
+@keyframes marquee-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.journey-cta{
+  margin-top:36px;display:inline-flex;align-items:center;gap:10px;background:var(--accent);
+  color:#0a0a09;border:none;padding:14px 22px;font-weight:800;font-size:13px;letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+.journey-cta:hover{background:var(--accent-bright);}
+
+/* ===== FILTER BAR ===== */
+.filterbar{
+  position:sticky;top:56px;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);
+  padding:14px 0;
+}
+.filter-row{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+.filter-group{display:flex;flex-direction:column;gap:8px;}
+.filter-group .fg-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{
+  background:transparent;border:1px solid var(--line);color:var(--ink-dim);font-size:12px;
+  padding:6px 11px;white-space:nowrap;font-weight:600;
+}
+.chip:hover{border-color:var(--ink-dim);color:var(--ink);}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#0a0a09;}
+.filter-count{
+  margin-left:auto;align-self:center;font-size:12px;color:var(--ink-faint);
+  padding-top:16px;
+}
+.filter-reset{
+  background:none;border:none;color:var(--accent-bright);font-size:12px;font-weight:700;
+  text-decoration:underline;padding-top:16px;
+}
+
+/* ===== ERA SCROLLER ===== */
+.era-scroller{border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;}
+.era-scroller::-webkit-scrollbar{display:none;}
+.era-scroller-inner{display:flex;max-width:var(--maxw);margin:0 auto;}
+.era-jump{
+  flex:0 0 auto;background:none;border:none;border-right:1px solid var(--line-soft);
+  padding:14px 20px;color:var(--ink-faint);font-size:12px;font-weight:700;
+  display:flex;flex-direction:column;gap:2px;text-align:left;min-width:120px;
+}
+.era-jump:hover{color:var(--ink);background:var(--bg-panel);}
+.era-jump .ej-range{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink);}
+
+/* ===== SECTION HEADERS ===== */
+.section{padding:70px 0;border-bottom:1px solid var(--line);}
+.section.tight{padding:50px 0;}
+.era-head{display:flex;gap:24px;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;}
+.era-head .yr{
+  font-family:'Anton',sans-serif;font-size:clamp(46px,7vw,84px);line-height:0.85;color:var(--ink);
+}
+.era-head .info{max-width:600px;padding-bottom:6px;}
+.era-head .info h2{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.01em;color:var(--accent-bright);margin-bottom:8px;}
+.era-head .info p{color:var(--ink-dim);font-size:15px;}
+.section-label{
+  font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-bright);
+  font-weight:700;margin-bottom:10px;
+}
+.section-title{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,46px);margin-bottom:14px;}
+.section-desc{color:var(--ink-dim);max-width:640px;font-size:15px;margin-bottom:36px;}
+
+/* ===== ALBUM GRID ===== */
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+.album-card{
+  background:var(--bg-panel);padding:0;display:flex;flex-direction:column;text-align:left;
+  border:none;color:var(--ink);position:relative;min-height:340px;
+}
+.album-card:hover{background:var(--bg-panel-2);}
+.album-card:hover .ac-plate{border-color:var(--accent);}
+.album-card:hover .ac-arrow{background:var(--accent);color:#0a0a09;transform:rotate(0deg);}
+.ac-plate{
+  aspect-ratio:1/1;border-bottom:1px solid var(--line);margin:14px 14px 0;
+  display:flex;flex-direction:column;justify-content:space-between;padding:14px;
+  background:
+    linear-gradient(160deg,rgba(224,19,36,0.16),transparent 60%),
+    var(--bg);
+  border:1px solid var(--line-soft);position:relative;
+}
+.ac-plate .plate-yr{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink-faint);}
+.ac-plate .plate-initial{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink-dim);align-self:flex-end;text-align:right;}
+.ac-arrow{
+  position:absolute;bottom:12px;right:12px;width:28px;height:28px;border:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:14px;
+  transform:rotate(-45deg);transition:all .15s;background:var(--bg-panel);z-index:3;
+}
+.ac-cover-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity .35s ease;z-index:1;
+}
+.ac-cover-img.loaded{opacity:1;}
+.ac-plate.has-cover::before{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,0.55) 0%,transparent 30%,transparent 60%,rgba(0,0,0,0.65) 100%);
+}
+.ac-plate.has-cover .plate-yr,.ac-plate.has-cover .plate-initial{position:relative;z-index:3;}
+.ac-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.ac-band{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;font-weight:700;}
+.ac-title{font-size:16px;font-weight:700;line-height:1.25;}
+.ac-tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:5px;padding-top:10px;}
+.tag{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);color:var(--ink-faint);font-weight:700;}
+.tag.importance{color:var(--accent-bright);border-color:var(--accent-dim);}
+.empty-state{color:var(--ink-faint);font-size:14px;padding:40px 0;text-align:center;}
+
+/* ===== MODAL ===== */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(5,5,4,0.82);z-index:120;display:none;
+  align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px;
+}
+.modal-backdrop.open{display:flex;}
+.modal{
+  background:var(--bg-panel);border:1px solid var(--line);max-width:760px;width:100%;
+  margin:auto;position:relative;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;background:var(--bg);border:1px solid var(--line);
+  width:36px;height:36px;color:var(--ink);font-size:16px;z-index:2;
+}
+.modal-close:hover{border-color:var(--accent);}
+.modal-head{
+  padding:34px 30px 22px;border-bottom:1px solid var(--line);
+  display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;
+}
+.modal-plate{
+  width:96px;height:96px;flex:0 0 auto;border:1px solid var(--line-soft);
+  background:linear-gradient(160deg,rgba(224,19,36,0.18),transparent 65%),var(--bg);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.modal-plate span{font-family:'Anton',sans-serif;font-size:26px;color:var(--ink-dim);position:relative;z-index:2;}
+.modal-plate .ac-cover-img{position:absolute;inset:0;}
+.modal-plate.has-cover::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(0,0,0,0.25);}
+.modal-head-text{flex:1;min-width:200px;}
+.modal-head .m-band{font-size:13px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;}
+.modal-head h3{font-family:'Anton',sans-serif;font-size:clamp(22px,4vw,32px);margin:6px 0 10px;}
+.modal-meta{display:flex;flex-wrap:wrap;gap:6px;}
+.modal-body{padding:26px 30px 34px;display:flex;flex-direction:column;gap:24px;}
+.mb-block h4{
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-bright);
+  margin-bottom:8px;font-weight:800;
+}
+.mb-block p{font-size:15px;color:var(--ink-dim);}
+.gen-flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.gen-col .gen-label{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
+.gen-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;}
+.gen-col li{font-size:13px;color:var(--ink-dim);border-left:2px solid var(--line);padding-left:8px;}
+.gen-col.current li{border-left-color:var(--accent);color:var(--ink);font-weight:700;}
+.track-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+.track-list li{
+  display:flex;justify-content:space-between;align-items:center;padding:9px 0;
+  border-bottom:1px solid var(--line-soft);font-size:14px;
+}
+.link-row{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:transparent;
+  color:var(--ink);padding:9px 14px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-decoration:none;
+  text-transform:uppercase;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent-bright);}
+.btn.small{padding:6px 10px;font-size:11px;}
+
+/* ===== FAMILY TREE ===== */
+.tree{display:flex;flex-direction:column;align-items:center;gap:0;}
+.tree-node{
+  border:1px solid var(--line);background:var(--bg-panel);padding:14px 22px;text-align:center;
+  min-width:180px;
+}
+.tree-node .tn-band{font-family:'Anton',sans-serif;font-size:16px;}
+.tree-node .tn-year{font-size:11px;color:var(--ink-faint);margin-top:2px;}
+.tree-connector{width:1px;height:26px;background:var(--line);}
+.tree-branch-row{display:flex;gap:0;align-items:flex-start;justify-content:center;flex-wrap:wrap;}
+.tree-branch{display:flex;flex-direction:column;align-items:center;padding:0 10px;position:relative;}
+.lineage-note{
+  margin-top:44px;font-size:12px;color:var(--ink-faint);text-align:center;max-width:460px;
+  margin-left:auto;margin-right:auto;border-top:1px solid var(--line-soft);padding-top:16px;
+}
+
+/* ===== COMPARISON ===== */
+.compare-table{width:100%;border-collapse:collapse;}
+.compare-table th,.compare-table td{border-bottom:1px solid var(--line-soft);padding:11px 8px;text-align:left;font-size:13px;}
+.compare-table th{color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;font-size:11px;font-weight:800;}
+.compare-table td.attr{color:var(--ink-dim);font-weight:700;}
+.qual-bar{display:flex;gap:3px;align-items:center;}
+.qual-seg{width:16px;height:8px;background:var(--line);}
+.qual-seg.on{background:var(--accent);}
+.qual-word{font-size:11px;color:var(--ink-faint);margin-left:8px;}
+
+/* ===== JOURNEY ===== */
+.journey-list{display:flex;flex-direction:column;}
+.journey-item{
+  display:grid;grid-template-columns:50px 1fr auto;gap:16px;align-items:center;
+  padding:16px 0;border-bottom:1px solid var(--line-soft);
+}
+.journey-item .j-num{font-family:'Anton',sans-serif;font-size:22px;color:var(--ink-faint);}
+.journey-item .j-band{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.04em;}
+.journey-item .j-title{font-weight:700;font-size:15px;}
+.journey-item .j-links{display:flex;gap:8px;}
+
+/* ===== SPLIT SECTION ===== */
+.split-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px;}
+.split-cell{background:var(--bg-panel);padding:24px 20px;}
+.split-cell h4{font-family:'Anton',sans-serif;font-size:17px;color:var(--accent-bright);margin-bottom:10px;}
+.split-cell p{font-size:14px;color:var(--ink-dim);}
+.split-final{
+  text-align:center;margin-top:50px;font-family:'Anton',sans-serif;font-size:clamp(18px,3vw,26px);
+  color:var(--ink-faint);
+}
+
+/* ===== NEW GERMAN WAVE ===== */
+.ngw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+.ngw-card{background:var(--bg-panel);padding:24px;}
+.ngw-card h3{font-family:'Anton',sans-serif;font-size:20px;margin-bottom:6px;}
+.ngw-card .ngw-loc{font-size:12px;color:var(--ink-faint);margin-bottom:14px;}
+.ngw-release{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-top:1px solid var(--line-soft);}
+
+/* ===== FOOTER ===== */
+footer{padding:60px 0 40px;}
+.footer-statement{font-family:'Anton',sans-serif;font-size:clamp(24px,4vw,38px);max-width:640px;}
+.footer-note{color:var(--ink-dim);font-size:14px;max-width:600px;margin-top:20px;}
+.footer-sources{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);}
+.footer-sources h5{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);margin-bottom:12px;}
+.footer-sources ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+.footer-sources a{font-size:13px;color:var(--ink-dim);text-decoration:underline;}
+.footer-sources a:hover{color:var(--accent-bright);}
+.footer-meta{margin-top:30px;font-size:12px;color:var(--ink-faint);}
+
+.visually-hidden-anchor{position:relative;top:-90px;}
+
+@media (max-width:720px){
+  .wrap{padding:0 18px;}
+  .filterbar{top:52px;}
+  .modal-body{padding:20px;}
+  .modal-head{padding:26px 20px 18px;}
+  .gen-flow{grid-template-columns:1fr;gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Primary">
+  <div class="topnav-inner" id="topnavInner">
+    <a class="brand" href="#top">EVOLUTION<span>/</span>DOOM</a>
+    <button class="navlink" data-scroll="e1970">Origins</button>
+    <button class="navlink" data-scroll="e1980">80s</button>
+    <button class="navlink" data-scroll="e1990">90s</button>
+    <button class="navlink" data-scroll="e2000">2000s</button>
+    <button class="navlink" data-scroll="e2010">2010s</button>
+    <button class="navlink" data-scroll="e2020">Now</button>
+    <button class="navlink" data-scroll="map">Map</button>
+    <button class="navlink" data-scroll="essential">Essential Albums</button>
+    <button class="nav-search-btn" id="openSearch" aria-label="Search bands, albums, years, subgenres">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="search-close" id="closeSearch" aria-label="Close search">✕</button>
+  <div class="search-box">
+    <label for="searchInput" class="sr-only">Search bands, albums, years, songs, subgenres</label>
+    <input type="text" id="searchInput" placeholder="Band, album, year, song, subgenre…" autocomplete="off">
+    <p class="search-hint">Try "Sunn O)))", "1986", "funeral doom", or "riff".</p>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<a id="top"></a>
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-kicker">A visual record, not a highlight reel</p>
+    <h1 class="display">THE EVOLUTION<span class="line2">OF DOOM METAL</span></h1>
+    <span class="hero-script">it never sped up.</span>
+    <p class="hero-sub">From Birmingham factory riffs to funeral tempos nobody else would attempt.</p>
+    <p class="hero-quote">"Every other metal genre got faster over time. Doom got slower, and never looked back."</p>
+    <div class="hero-range">
+      <span class="num">1970</span><span class="dash">—</span><span class="num">2026</span>
+    </div>
+    <button class="journey-cta" id="startJourneyHero">Start the listening journey →</button>
+  </div>
+  <div class="hero-strip" aria-hidden="true">
+    <div class="cell"><div class="yr">1970</div><div class="lbl">Black Sabbath invent the riff</div></div>
+    <div class="cell"><div class="yr">1984</div><div class="lbl">Traditional doom takes shape</div></div>
+    <div class="cell"><div class="yr">1986</div><div class="lbl">Epic doom, Sweden</div></div>
+    <div class="cell"><div class="yr">1993</div><div class="lbl">Death-doom, UK</div></div>
+    <div class="cell"><div class="yr">1994</div><div class="lbl">Funeral doom is born</div></div>
+    <div class="cell"><div class="yr">2000</div><div class="lbl">Dopethrone, stoner peaks</div></div>
+    <div class="cell"><div class="yr">2005</div><div class="lbl">Drone hits its ceiling</div></div>
+    <div class="cell"><div class="yr">2017</div><div class="lbl">Mirror Reaper</div></div>
+    <div class="cell"><div class="yr">2026</div><div class="lbl">Three legends return</div></div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<div class="filterbar">
+  <div class="wrap filter-row">
+    <div class="filter-group">
+      <span class="fg-label">Era</span>
+      <div class="chip-row" id="filterEra"></div>
+    </div>
+    <div class="filter-group">
+      <span class="fg-label">Subgenre</span>
+      <div class="chip-row" id="filterSub"></div>
+    </div>
+    <div class="filter-group">
+      <span class="fg-label">Importance</span>
+      <div class="chip-row" id="filterImp"></div>
+    </div>
+    <span class="filter-count" id="filterCount"></span>
+    <button class="filter-reset" id="resetFilters">Clear filters</button>
+  </div>
+</div>
+
+<nav class="era-scroller" aria-label="Jump to era">
+  <div class="era-scroller-inner" id="eraScroller"></div>
+</nav>
+
+<main id="timelineMain"></main>
+
+<section class="section" id="map">
+  <div class="wrap">
+    <p class="section-label">The family tree</p>
+    <h2 class="section-title">Sonic lineage</h2>
+    <p class="section-desc">This isn't a chain of direct influence in every link — some of it is documented lineage, some of it is scene continuity. Where a connection is stylistic rather than confirmed, we call it "sonic lineage," not "influenced by."</p>
+    <div class="tree" id="treeContainer"></div>
+    <p class="lineage-note">Every band on this chain also drew from dozens of peers outside it. A single line can't hold a genre — this is one legible path through it, not the only one.</p>
+  </div>
+</section>
+
+<section class="section tight" id="compare">
+  <div class="wrap">
+    <p class="section-label">How doom changed</p>
+    <h2 class="section-title">Four snapshots</h2>
+    <p class="section-desc">Qualitative, not measured — these are relative comparisons across the genre's center of gravity in each year, not lab data.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" id="ngw">
+  <div class="wrap">
+    <p class="section-label">2026</p>
+    <h2 class="section-title">The class of 2026</h2>
+    <p class="section-desc">A coincidence with no real precedent: three of doom's most important living institutions all released new albums within ten weeks of each other, after gaps of five, seven, and eleven years respectively. Verified against label and streaming pages, September 2026.</p>
+    <div class="ngw-grid" id="ngwGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="essential">
+  <div class="wrap">
+    <p class="section-label">The canon</p>
+    <h2 class="section-title">Essential albums</h2>
+    <p class="section-desc">Not "the best" — the records you'd need to understand how the genre got from Black Sabbath to Khemmis.</p>
+    <div class="album-grid" id="essentialGrid"></div>
+  </div>
+</section>
+
+<section class="section tight" id="journey">
+  <div class="wrap">
+    <p class="section-label">Listen in order</p>
+    <h2 class="section-title">The listening journey</h2>
+    <p class="section-desc">Roughly two dozen albums, sequenced by history rather than quality, from Black Sabbath in 1970 to Bell Witch in 2017 — set aside a lot of time, this is not a fast genre.</p>
+    <div class="journey-list" id="journeyList"></div>
+  </div>
+</section>
+
+<section class="section" id="split">
+  <div class="wrap">
+    <p class="section-label">2026</p>
+    <h2 class="section-title">Doom didn't die.<br>It multiplied.</h2>
+    <p class="section-desc">Five directions are carrying the genre's name right now, and some of them share almost nothing but tempo.</p>
+    <div class="split-grid" id="splitGrid"></div>
+    <p class="split-final">And the tempo still hasn't caught up.</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack2"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-statement">Doom metal is not a genre in a hurry.</p>
+    <p class="footer-note">The genre was born from Black Sabbath slowing blues-rock down until it turned into dread, and it kept finding new ways to be heavy without being fast — through Swedish epic doom, English death-doom, Finnish funeral doom, American sludge and stoner rock, and Pacific Northwest drone. The categories on this page are historical approximations — they overlap, and reasonable people disagree on where one ends and another begins.</p>
+    <p class="footer-note">Album covers load live from Apple's iTunes catalog when a confident match exists; where it doesn't — mostly smaller and underground releases — the page falls back to a designed reference plate instead of a broken image. Streaming links go to search results where a confirmed direct URL wasn't available. Dates for 2025–2026 releases were checked against label and streaming-platform listings in September 2026.</p>
+    <div class="footer-sources">
+      <h5>Sources / Research</h5>
+      <ul id="sourcesList"></ul>
+    </div>
+    <p class="footer-meta">Built as a single self-contained page. No tracking, no backend.</p>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+/* =========================================================
+   DATA
+   ========================================================= */
+const ERAS = [
+  {key:'e1970', range:'1968–79', bucket:'1968-1979', title:'Before doom had a name', blurb:'Black Sabbath slow blues-rock down until it turns into dread. There\'s no genre called "doom metal" yet — that name gets retrofitted onto this material decades later — but the tritone, the volume, and the tempo are already all there.'},
+  {key:'e1980', range:'1980–85', bucket:'1980-1989', title:'Traditional doom takes shape', blurb:'A small, unfashionable scene in the UK and US keeps writing Sabbath-worship riffs through the entire NWOBHM and thrash boom, mostly ignored by both. Witchfinder General, Saint Vitus and Trouble define what "traditional doom" sounds like.'},
+  {key:'e1986', range:'1986–89', bucket:'1980-1989', title:'Epic doom, the Swedish school', blurb:'Candlemass fuse traditional doom with operatic vocals and multi-tracked, cathedral-sized riffing. "Epic doom" becomes its own recognizable style, and gets adopted across Sweden and the US almost immediately.'},
+  {key:'e1990', range:'1990–94', bucket:'1990-1999', title:'Death-doom and the UK sound', blurb:'Paradise Lost, My Dying Bride and Anathema — soon nicknamed the "Peaceville Three" after their shared label — merge doom\'s weight with death metal growls and gothic melancholy. In parallel, American sludge and stoner doom take shape in New Orleans and the California desert.'},
+  {key:'e1994', range:'1994–99', bucket:'1990-1999', title:'Funeral doom is born', blurb:'Finnish bands push tempo and despair further than anyone thought a song could sustain. Thergothon\'s one and only album effectively invents an entire subgenre that wouldn\'t be named "funeral doom" until years later.'},
+  {key:'e2000', range:'2000–04', bucket:'2000-2009', title:'Dopethrone and drone step forward', blurb:'Stoner doom hits its heaviest, filthiest form with Electric Wizard, while a Seattle duo starts building entire albums out of a single sustained guitar tone.'},
+  {key:'e2005', range:'2005–09', bucket:'2000-2009', title:'Drone and post-metal peak', blurb:'Sunn O))) turn drone into a genuine listening event rather than a novelty. Neurosis and Yob push doom toward post-metal scale and ambient patience.'},
+  {key:'e2010', range:'2010–15', bucket:'2010-2019', title:'The doom revival', blurb:'A new generation — largely American, largely unconnected to any one scene — rebuilds doom from scratch: Pallbearer\'s melodic grief, Bell Witch\'s two-piece minimalism, Windhand\'s fuzz, Elder\'s progressive sprawl.'},
+  {key:'e2016', range:'2016–19', bucket:'2010-2019', title:'Modern doom finds its footing', blurb:'Khemmis and Bell Witch turn the 2010s revival into a stable, actively touring scene, with Mirror Reaper standing as one of the most extreme structural statements the genre has ever produced.'},
+  {key:'e2020', range:'2020–26', bucket:'2020-2026', title:'Doom in the streaming era', blurb:'The genre keeps a small, devoted audience and a steady release schedule rather than chasing virality. 2026 is an unusually loaded year: Sunn O))), Elder and Khemmis all return from multi-year gaps within ten weeks of each other.'},
+];
+
+// importance labels
+const IMPORTANCE = {
+  foundational:'Foundational',
+  'genre-defining':'Genre Defining',
+  essential:'Essential',
+  'modern-landmark':'Modern Landmark',
+  'new-generation':'New Generation'
+};
+const SUBGENRES = ['Traditional Doom','Epic Doom','Death-Doom','Funeral Doom','Sludge Doom','Stoner Doom','Drone Doom','Post-Metal','Doom-Death','Psychedelic Doom'];
+const ERA_BUCKETS = ['1968-1979','1980-1989','1990-1999','2000-2009','2010-2019','2020-2026'];
+
+function sp(q){return 'https://open.spotify.com/search/'+encodeURIComponent(q);}
+function yt(q){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(q);}
+
+let _id = 0;
+function A(o){
+  _id++;
+  return Object.assign({
+    id:'a'+_id, essential:false, journey:null, tracks:[], previous:[], next:[], country:'', why:''
+  }, o, {
+    spotify: o.spotify || sp(o.band+' '+o.album),
+    youtube: o.youtube || yt(o.band+' '+o.album)
+  });
+}
+
+const ALBUMS = [
+// ERA 1 — 1968-1979
+A({era:'e1970',year:1970,band:'Black Sabbath',album:'Black Sabbath',country:'UK',sub:['Traditional Doom'],imp:'foundational',
+  why:'The title track is generally treated as doom metal\'s zero point — a tritone riff, a thunderstorm sample, and a tempo nobody in rock had committed to before. The whole genre is a 56-year footnote to this one song.',
+  tracks:[{n:'Black Sabbath'},{n:'N.I.B.'},{n:'Wicked World'}]}),
+A({era:'e1970',year:1970,band:'Black Sabbath',album:'Paranoid',country:'UK',sub:['Traditional Doom'],imp:'foundational',
+  why:'Faster and more commercial than the debut in places, but "Iron Man" and "War Pigs" carry the plodding, doom-defining riff into the mainstream within the same calendar year.',
+  tracks:[{n:'War Pigs'},{n:'Iron Man'},{n:'Electric Funeral'}]}),
+A({era:'e1970',year:1971,band:'Black Sabbath',album:'Master of Reality',country:'UK',sub:['Traditional Doom'],imp:'foundational',
+  why:'Downtuned further than either prior record, with "Into the Void" and "Children of the Grave" arguably the closest thing to a doom metal blueprint the band ever recorded.',
+  tracks:[{n:'Into the Void'},{n:'Children of the Grave'},{n:'Sweet Leaf'}],
+  next:['Pentagram','Witchfinder General','Saint Vitus']}),
+A({era:'e1970',year:1971,band:'Bloodrock',album:'Bloodrock 2',country:'USA',sub:['Traditional Doom'],imp:'foundational',
+  why:'A heavy, morbid American counterpart to early Sabbath — "D.O.A." is often cited as one of the bleakest, slowest things committed to tape in hard rock\'s early years.',
+  tracks:[{n:'D.O.A.'},{n:'Lucky in the Morning'}]}),
+
+// ERA 2 — 1980-1985
+A({era:'e1980',year:1982,band:'Witchfinder General',album:'Death Penalty',country:'UK',sub:['Traditional Doom'],imp:'foundational',
+  why:'NWOBHM\'s doom-facing wing — plodding, occult, unfashionable even within its own scene, and hugely important to everyone who revived the sound decades later.',
+  tracks:[{n:'Death Penalty'},{n:'Free Country'}]}),
+A({era:'e1980',year:1983,band:'Witchfinder General',album:'Friends of Hell',country:'UK',sub:['Traditional Doom'],imp:'genre-defining',
+  why:'A rawer, faster follow-up that still stayed anchored to the band\'s core Sabbath-worship sound.',
+  tracks:[{n:'Friends of Hell'},{n:'Torment'}]}),
+A({era:'e1980',year:1984,band:'Saint Vitus',album:'Saint Vitus',country:'USA',sub:['Traditional Doom'],imp:'foundational',
+  why:'Released on SST — a hardcore punk label — this is the American traditional-doom blueprint: slow, sludgy, and completely out of step with LA\'s glam scene at the time.',
+  tracks:[{n:'Saint Vitus'},{n:'White Magic/Black Magic'},{n:'Zombie Hunger'}]}),
+A({era:'e1980',year:1984,band:'Trouble',album:'Psalm 9',country:'USA',sub:['Traditional Doom'],imp:'foundational',
+  why:'Sometimes called "white metal" for its overt Christian imagery, this Chicago record is one of American doom\'s two foundational documents alongside Saint Vitus\'s debut.',
+  tracks:[{n:'The Tempter'},{n:'Assassin'},{n:'Bastards Will Pay'}]}),
+A({era:'e1980',year:1985,band:'Pentagram',album:'Relentless',country:'USA',sub:['Traditional Doom'],imp:'foundational',
+  why:'Pentagram had been writing doom riffs since 1971 without a proper release; this compiles the band\'s long-buried early-70s material and confirms an entire hidden lineage of American doom predating even Saint Vitus and Trouble.',
+  tracks:[{n:'Relentless'},{n:'Sign of the Wolf'},{n:'20 Buck Spin'}]}),
+
+// ERA 3 — 1986-1989
+A({era:'e1986',year:1986,band:'Candlemass',album:'Epicus Doomicus Metallicus',country:'Sweden',sub:['Epic Doom'],imp:'foundational',
+  why:'The album\'s title effectively named a subgenre. Operatic vocals, cathedral-scale riffing, and a Swedish take on doom that had almost no relationship to the American or UK scenes.',
+  tracks:[{n:'Solitude'},{n:'Demon\'s Gate'},{n:'Under the Oak'}],
+  previous:['Pentagram','Saint Vitus'], next:['Solitude Aeturnus']}),
+A({era:'e1986',year:1986,band:'Saint Vitus',album:'Born Too Late',country:'USA',sub:['Traditional Doom'],imp:'essential',
+  why:'The title track is close to a mission statement for the entire genre — a defiant, unhurried refusal to sound like anything happening in metal in 1986.',
+  tracks:[{n:'Born Too Late'},{n:'The Bleeding Ground'}]}),
+A({era:'e1986',year:1987,band:'Candlemass',album:'Nightfall',country:'Sweden',sub:['Epic Doom'],imp:'essential',
+  why:'Widely considered the peak of the band\'s original run and of epic doom generally — bigger production, sharper songwriting, still fully committed to the tempo.',
+  tracks:[{n:'Bewitched'},{n:'At the Gallows End'},{n:'The Well of Souls'}]}),
+A({era:'e1986',year:1987,band:'Trouble',album:'Run to the Light',country:'USA',sub:['Traditional Doom'],imp:'genre-defining',
+  why:'A more polished, Rick Rubin-adjacent-scene record that kept traditional doom\'s momentum going into the late 80s.',
+  tracks:[{n:'Run to the Light'},{n:'All Is Forgiven'}]}),
+A({era:'e1986',year:1988,band:'Candlemass',album:'Ancient Dreams',country:'Sweden',sub:['Epic Doom'],imp:'genre-defining',
+  why:'Denser and more melodic again, cementing the Swedish epic doom sound before the band\'s late-80s lineup changes.',
+  tracks:[{n:'Mourner\'s Lament'},{n:'Epistle No. 81'}]}),
+
+// ERA 4 — 1990-1994
+A({era:'e1990',year:1990,band:'Winter',album:'Into Darkness',country:'USA',sub:['Death-Doom','Sludge Doom'],imp:'foundational',
+  why:'Almost unbearably slow and heavy for 1990, this one-album band is retroactively treated as a direct bridge to funeral doom.',
+  tracks:[{n:'Into Darkness'},{n:'Servants of Death'}]}),
+A({era:'e1990',year:1990,band:'Paradise Lost',album:'Lost Paradise',country:'UK',sub:['Death-Doom'],imp:'genre-defining',
+  why:'Paradise Lost\'s debut, recorded fast and cheap, still lays the groundwork for what would become the UK death-doom sound within a year.',
+  tracks:[{n:'Deadly Inner Sense'},{n:'Frozen Illusion'}]}),
+A({era:'e1990',year:1991,band:'Cathedral',album:'Forest of Equilibrium',country:'UK',sub:['Traditional Doom','Sludge Doom'],imp:'foundational',
+  why:'Ex-Napalm Death vocalist Lee Dorrian goes from grindcore\'s fastest band to one of the slowest records ever made — a genuinely startling pivot that reignited UK interest in traditional doom.',
+  tracks:[{n:'Forest of Equilibrium'},{n:'Serpent Eve'},{n:'Soul Sacrifice'}]}),
+A({era:'e1990',year:1991,band:'Paradise Lost',album:'Gothic',country:'UK',sub:['Death-Doom'],imp:'essential',
+  why:'The record that named a sound: death growls, doom tempo, and orchestral gothic melody. One of the three pillars of the "Peaceville Three."',
+  tracks:[{n:'Gothic'},{n:'Rapture'},{n:'Shattered'}]}),
+A({era:'e1990',year:1991,band:'Solitude Aeturnus',album:'Into the Depths of Sorrow',country:'USA',sub:['Epic Doom'],imp:'genre-defining',
+  why:'The strongest American answer to Candlemass\'s epic doom template, from a Texas band that stayed committed to the sound for two decades.',
+  tracks:[{n:'Solitude'},{n:'Beyond the Crimson Horizon'}]}),
+A({era:'e1990',year:1992,band:'Sleep',album:"Sleep's Holy Mountain",country:'USA',sub:['Stoner Doom'],imp:'essential',
+  why:'Black Sabbath worship filtered through hardcore\'s DIY ethic and a lot of weed — the record that made "stoner doom" a coherent, marketable sound.',
+  tracks:[{n:'Dragonaut'},{n:'Evil Gypsy / Solomon\'s Theme'}]}),
+A({era:'e1990',year:1992,band:'Kyuss',album:'Blues for the Red Sun',country:'USA',sub:['Stoner Doom'],imp:'genre-defining',
+  why:'Not doom in tempo, but essential to doom\'s vocabulary — Palm Desert\'s fuzzed-out, bass-heavy "desert rock" gave the entire stoner-doom wing its production template.',
+  tracks:[{n:'Thumb'},{n:'Green Machine'}]}),
+A({era:'e1990',year:1992,band:'Melvins',album:'Lysol',country:'USA',sub:['Sludge Doom'],imp:'genre-defining',
+  why:'Slower, heavier and more abrasive than the band\'s earlier work — a direct influence on the sludge doom that would follow out of the Pacific Northwest and the South.',
+  tracks:[{n:'Hung Bunny'},{n:'With Teeth'}]}),
+A({era:'e1990',year:1993,band:'My Dying Bride',album:'Turn Loose the Swans',country:'UK',sub:['Death-Doom'],imp:'essential',
+  why:'Violin, growled vocals, and funeral-scale grief — the second pillar of the Peaceville Three and arguably the most emotionally direct death-doom record of the era.',
+  tracks:[{n:'Turn Loose the Swans'},{n:'Your River'},{n:'The Songless Bird'}]}),
+A({era:'e1990',year:1993,band:'Anathema',album:'Serenades',country:'UK',sub:['Death-Doom'],imp:'genre-defining',
+  why:'The third of the Peaceville Three — rawer and more Sabbath-indebted than its labelmates, before Anathema moved toward alternative rock later in the decade.',
+  tracks:[{n:'Lovelorn Rhapsody'},{n:'Sleepless'}]}),
+A({era:'e1990',year:1993,band:'Paradise Lost',album:'Icon',country:'UK',sub:['Death-Doom'],imp:'essential',
+  why:'A cleaner, more melodic pivot that pointed toward gothic metal proper — divisive at release, hugely influential in hindsight.',
+  tracks:[{n:'Widow'},{n:'Joys of the Emptiness'},{n:'Poison'}]}),
+A({era:'e1990',year:1993,band:'Disembowelment',album:'Transcendence into the Peripheral',country:'Australia',sub:['Death-Doom','Funeral Doom'],imp:'essential',
+  why:'One album, one band, and an enormous influence — alternating blast-beat death metal with passages so slow they effectively predict funeral doom a year before Thergothon\'s debut.',
+  tracks:[{n:'The Tree of Life and Death'},{n:'Excoriate'}],
+  next:['Thergothon']}),
+A({era:'e1990',year:1993,band:'Eyehategod',album:'Take as Needed for Pain',country:'USA',sub:['Sludge Doom'],imp:'essential',
+  why:'New Orleans sludge\'s definitive statement — doom tempo, hardcore aggression, and a filthy, feedback-choked production sound that the entire sludge scene still measures itself against.',
+  tracks:[{n:'Blank'},{n:'Sisterfucker (Pt. 1)'},{n:'Take as Needed for Pain'}]}),
+
+// ERA 5 — 1994-1999
+A({era:'e1994',year:1994,band:'Thergothon',album:'Stream from the Heavens',country:'Finland',sub:['Funeral Doom'],imp:'foundational',
+  why:'The only full-length from a band that broke up before its release — commonly credited as the record that actually invents funeral doom, years before the subgenre had a name.',
+  tracks:[{n:'Everlasting'},{n:'Elid'},{n:'Yet the Watchers Guard'}],
+  previous:['Disembowelment'], next:['Skepticism']}),
+A({era:'e1994',year:1994,band:'Esoteric',album:'Epistemological Despondency',country:'UK',sub:['Funeral Doom'],imp:'genre-defining',
+  why:'A UK counterpart to the Finnish funeral doom scene, released the same year as Thergothon\'s debut and just as bleak.',
+  tracks:[{n:'The Blood of Han'},{n:'Torn'}]}),
+A({era:'e1994',year:1995,band:'Skepticism',album:'Stormcrowfleet',country:'Finland',sub:['Funeral Doom'],imp:'essential',
+  why:'Organ-driven and glacially paced, this turned funeral doom from Thergothon\'s one-off into an actual ongoing subgenre with a defined sound.',
+  tracks:[{n:'The Sign of a Storm'},{n:'Stormcrowfleet'}]}),
+A({era:'e1994',year:1995,band:'My Dying Bride',album:'The Angel and the Dark River',country:'UK',sub:['Death-Doom'],imp:'essential',
+  why:'A quieter, less death-metal-indebted record that pushed the band toward pure doom balladry.',
+  tracks:[{n:'The Cry of Mankind'},{n:'From Darkest Skies'}]}),
+A({era:'e1994',year:1996,band:'Boris',album:'Absolutego',country:'Japan',sub:['Drone Doom','Sludge Doom'],imp:'foundational',
+  why:'One continuous, roughly 65-minute track — Boris announcing themselves as Japan\'s answer to American drone and sludge doom in a single uncompromising gesture.',
+  tracks:[{n:'Absolutego'}]}),
+A({era:'e1994',year:1996,band:'Neurosis',album:'Through Silver in Blood',country:'USA',sub:['Post-Metal','Sludge Doom'],imp:'essential',
+  why:'Doom-tempo sludge stretched into tribal, ritualistic, almost unbearable scale — a foundational post-metal record as much as a doom one.',
+  tracks:[{n:'Through Silver in Blood'},{n:'Locust Star'}],
+  next:['Ahab','Yob']}),
+A({era:'e1994',year:1997,band:'Electric Wizard',album:'Come My Fanatics...',country:'UK',sub:['Stoner Doom','Sludge Doom'],imp:'essential',
+  why:'Filthy, distorted, occult-obsessed stoner doom that set up the band\'s far more famous follow-up three years later.',
+  tracks:[{n:'Return Trip'},{n:'Ivixor B / Phase Inducer'}]}),
+A({era:'e1994',year:1998,band:'Sunn O)))',album:'The Grimmrobe Demos',country:'USA',sub:['Drone Doom'],imp:'foundational',
+  why:'Greg Anderson and Stephen O\'Malley\'s first release under the Sunn O))) name — named after the Sunn amplifier company — already committed to the extreme minimalism that would define the project.',
+  tracks:[{n:'Kannon'},{n:'My Wall'}],
+  next:['Sunn O)))']}),
+
+// ERA 6 — 2000-2004
+A({era:'e2000',year:2000,band:'Electric Wizard',album:'Dopethrone',country:'UK',sub:['Stoner Doom','Sludge Doom'],imp:'essential',
+  why:'The single most influential stoner doom record after Sleep\'s catalog — filthy, sample-laden, and treated as a genre cornerstone almost immediately.',
+  tracks:[{n:'Vinum Sabbathi'},{n:'Funeralopolis'},{n:'Weird Tales'}],
+  previous:['Sleep'], next:['Windhand','Conan']}),
+A({era:'e2000',year:2000,band:'Sunn O)))',album:'ØØ Void',country:'USA',sub:['Drone Doom'],imp:'genre-defining',
+  why:'Guest vocalists and slightly more song structure than the project\'s later work, but still built almost entirely from sustained, distorted low end.',
+  tracks:[{n:'Dylan Carlson'},{n:'ØØ Fluttermoths'}]}),
+A({era:'e2000',year:2003,band:'Sleep',album:'Jerusalem / Dopesmoker',country:'USA',sub:['Stoner Doom'],imp:'modern-landmark',
+  why:'Recorded in 1998 as one continuous 63-minute track, shelved after a dispute with the band\'s label, and released in a truncated, remixed form as "Jerusalem" in 2003. The full, uncut version wasn\'t released under its intended title, "Dopesmoker," until 2012 — one of doom\'s most infamous, decade-spanning release sagas.',
+  tracks:[{n:'Dopesmoker'}],essential:true}),
+A({era:'e2000',year:2000,band:'Boris',album:'Flood',country:'Japan',sub:['Drone Doom','Post-Metal'],imp:'genre-defining',
+  why:'A single 70-minute piece that trades Absolutego\'s harshness for a slower build toward beauty — expanding drone doom\'s emotional range.',
+  tracks:[{n:'Flood'}]}),
+A({era:'e2000',year:2002,band:'Reverend Bizarre',album:'In the Rectory of the Bizarre Reverend',country:'Finland',sub:['Epic Doom'],imp:'genre-defining',
+  why:'A defiantly retro epic doom record that helped revive interest in the Candlemass-style sound for a new generation of listeners.',
+  tracks:[{n:'Kiss the Sun'},{n:'Solitude'}]}),
+
+// ERA 7 — 2005-2009
+A({era:'e2005',year:2005,band:'Sunn O)))',album:'Black One',country:'USA',sub:['Drone Doom'],imp:'modern-landmark',
+  why:'Widely regarded as the project\'s creative peak — collaborations with black metal musicians push the record into genuinely unsettling territory, and it remains the drone-doom record most cited outside the subgenre\'s own circles.',
+  tracks:[{n:'Sin Nanna'},{n:'It Took the Night to Believe'}],essential:true,
+  previous:['Sunn O))) (The Grimmrobe Demos)'], next:['Yob']}),
+A({era:'e2005',year:2006,band:'Ahab',album:'The Call of the Wretched Sea',country:'Germany',sub:['Funeral Doom'],imp:'essential',
+  why:'A funeral doom concept album based on Moby-Dick — the first in an ongoing series of "nautic doom" records that gave the subgenre a distinct thematic identity.',
+  tracks:[{n:'The Hunt'},{n:'Old Thunder'}]}),
+A({era:'e2005',year:2006,band:'Warning',album:'Watching from a Distance',country:'UK',sub:['Traditional Doom','Death-Doom'],imp:'essential',
+  why:'A quietly devastating, almost entirely clean-sung traditional doom record that took years to be recognized as one of the genre\'s best.',
+  tracks:[{n:'Watching from a Distance'},{n:'Bridge of Sighs'}]}),
+A({era:'e2005',year:2006,band:'Sunn O))) & Boris',album:'Altar',country:'USA/Japan',sub:['Drone Doom'],imp:'genre-defining',
+  why:'A full collaborative album between the two drone doom institutions, with guest vocals from Jesse Sykes and Joe Preston.',
+  tracks:[{n:'Etna'},{n:'The Sinking Belle (Blue Sheep)'}]}),
+A({era:'e2005',year:2007,band:'Neurosis',album:'Given to the Rising',country:'USA',sub:['Post-Metal','Sludge Doom'],imp:'genre-defining',
+  why:'A more focused, song-oriented record than Through Silver in Blood, still operating at doom-post-metal scale.',
+  tracks:[{n:'Given to the Rising'},{n:'Water Is Not Enough'}]}),
+A({era:'e2005',year:2009,band:'Yob',album:'The Great Cessation',country:'USA',sub:['Stoner Doom','Post-Metal'],imp:'essential',
+  why:'Mike Scheidt\'s project turns doom into something closer to meditation practice — long, repetitive, and psychologically heavy rather than just sonically heavy.',
+  tracks:[{n:'Burning the Altar'},{n:'The Lie That Is Sin'}]}),
+
+// ERA 8 — 2010-2015
+A({era:'e2010',year:2011,band:'Uncle Acid and the Deadbeats',album:'Blood Lust',country:'UK',sub:['Stoner Doom','Psychedelic Doom'],imp:'genre-defining',
+  why:'Fuzzy, 60s-psych-obsessed doom that helped kick off a broader "occult rock" revival adjacent to the doom scene proper.',
+  tracks:[{n:'I\'ll Cut You Down'},{n:'Death\'s Door'}]}),
+A({era:'e2010',year:2012,band:'Pallbearer',album:'Sorrow and Extinction',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'essential',
+  why:'Melodic, emotionally direct traditional doom that became the most acclaimed debut of the genre\'s 2010s revival almost overnight.',
+  tracks:[{n:'Foreigner'},{n:'The Legend'}],
+  previous:['Warning'], next:['Khemmis','Elder']}),
+A({era:'e2010',year:2012,band:'Windhand',album:'Windhand',country:'USA',sub:['Stoner Doom'],imp:'genre-defining',
+  why:'Thick, Sabbath-and-Sleep-indebted stoner doom from Richmond, Virginia, with Dorthia Cottrell\'s vocals giving the band a distinct identity within a crowded revival scene.',
+  tracks:[{n:'Two Urns'},{n:'Reptile Robes'}]}),
+A({era:'e2010',year:2012,band:'Bell Witch',album:'Longing',country:'USA',sub:['Funeral Doom'],imp:'essential',
+  why:'A two-piece — bass and drums only, no guitar — building funeral doom out of an almost impossibly minimal setup.',
+  tracks:[{n:'Longing (A Vessel)'},{n:'Rows (of Endless Grave)'}],
+  next:['Bell Witch (Mirror Reaper)']}),
+A({era:'e2010',year:2012,band:'Conan',album:'Monnos',country:'UK',sub:['Sludge Doom'],imp:'genre-defining',
+  why:'Self-described "caveman battle doom" — deliberately primitive, bass-heavy, and among the loudest records in the genre\'s modern catalog.',
+  tracks:[{n:'Grim Tormentor'},{n:'Altar of Grief'}]}),
+A({era:'e2010',year:2014,band:'Pallbearer',album:'Foundations of Burden',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'essential',
+  why:'A more progressive, technically ambitious follow-up that confirmed Sorrow and Extinction was no fluke.',
+  tracks:[{n:'Worlds Apart'},{n:'Foundations'}]}),
+A({era:'e2010',year:2014,band:'Yob',album:'Clearing the Path to Ascend',country:'USA',sub:['Stoner Doom','Post-Metal'],imp:'essential',
+  why:'Widely cited as Yob\'s creative peak — vast, patient songwriting that treats doom as a spiritual discipline as much as a genre.',
+  tracks:[{n:'In Our Blood'},{n:'Nothing to Win'}]}),
+A({era:'e2010',year:2015,band:'Elder',album:'Lore',country:'USA',sub:['Stoner Doom','Psychedelic Doom'],imp:'essential',
+  why:'The record that turned Elder from a solid stoner-doom band into one of the most technically restless acts in the genre, folding in prog-rock structure and psychedelia.',
+  tracks:[{n:'Compendium'},{n:'Legend'}],
+  previous:['Pallbearer'], next:['Elder (Through Zero)']}),
+A({era:'e2010',year:2015,band:'Bell Witch',album:'Four Phantoms',country:'USA',sub:['Funeral Doom'],imp:'genre-defining',
+  why:'A concept record about death by each of the four classical elements — expanding the two-piece\'s scope without adding a single additional musician.',
+  tracks:[{n:'Suffocation, A Msytery (I. Betrayal)'},{n:'Judgement in Fire'}]}),
+
+// ERA 9 — 2016-2019
+A({era:'e2016',year:2016,band:'Khemmis',album:'Absolution',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'essential',
+  why:'Doom riffing merged with clean, almost power-metal-adjacent vocal melody — a defining record of doom\'s late-2010s mainstream-adjacent wing.',
+  tracks:[{n:'Antediluvian'},{n:'Ephemeral Bliss'}],
+  previous:['Pallbearer','Elder'], next:['Khemmis (self-titled)']}),
+A({era:'e2016',year:2017,band:'Bell Witch',album:'Mirror Reaper',country:'USA',sub:['Funeral Doom'],imp:'modern-landmark',
+  why:'One 83-minute track, split into two halves that mirror each other, written partly as a tribute to the band\'s late drummer Adrian Guerra. One of the most extreme structural statements funeral doom has ever produced.',
+  tracks:[{n:'Mirror Reaper'}],essential:true,
+  previous:['Bell Witch (Longing)'], next:[]}),
+A({era:'e2016',year:2018,band:'Khemmis',album:'Hunted',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'genre-defining',
+  why:'A slightly leaner, more urgent follow-up to Absolution that kept the band\'s momentum going into wider touring.',
+  tracks:[{n:'Hunted'},{n:'Beyond the Door'}]}),
+A({era:'e2016',year:2018,band:'Windhand',album:'Eternal Return',country:'USA',sub:['Stoner Doom'],imp:'genre-defining',
+  why:'A more expansive, occasionally psychedelic record than the band\'s earlier, sludgier work.',
+  tracks:[{n:'Grey Garden'},{n:'Diablerie'}]}),
+A({era:'e2016',year:2019,band:'Spirit Adrift',album:'Divided by Darkness',country:'USA',sub:['Traditional Doom'],imp:'genre-defining',
+  why:'Nate Garrett\'s project pivots toward a leaner, more heavy-metal-indebted take on traditional doom, a direction the band would keep pushing into the 2020s.',
+  tracks:[{n:'Hum'},{n:'Curse of Conception'}]}),
+
+// ERA 10 — 2020-2026
+A({era:'e2020',year:2021,band:'Khemmis',album:'Deceiver',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'genre-defining',
+  why:'A darker, heavier record than Hunted, closing out the band\'s pre-2026 run before a five-year gap to their next album.',
+  tracks:[{n:'Living Pyre'},{n:'The Bereaved'}]}),
+A({era:'e2020',year:2023,band:'Bell Witch',album:"Future's Shadow Part 1: The Clandestine Gate",country:'USA',sub:['Funeral Doom'],imp:'new-generation',
+  why:'The first installment of a planned multi-part cycle, extending the scale of Mirror Reaper rather than retreating from it.',
+  tracks:[{n:'Aeaea'},{n:'Belaeric Grey'}]}),
+A({era:'e2020',year:2023,band:'Spirit Adrift',album:'Ghost at the Gallows',country:'USA',sub:['Traditional Doom'],imp:'genre-defining',
+  why:'Continues the band\'s move toward a cleaner, classic-heavy-metal-adjacent version of traditional doom.',
+  tracks:[{n:'Fire Age'},{n:'Backwaters'}]}),
+A({era:'e2020',year:2025,band:'Green Carnation',album:'A Dark Poem, Pt. I: The Shores of Melancholia',country:'Norway',sub:['Death-Doom'],imp:'new-generation',
+  why:'The first part of a planned trilogy from the veteran Norwegian doom/gothic metal band, returning to the genre\'s melancholic core.',
+  tracks:[{n:'The Shores of Melancholia'},{n:'A Dark Poem'}]}),
+A({era:'e2020',year:2026,band:'Green Carnation',album:'A Dark Poem, Pt. II: Sanguis',country:'Norway',sub:['Death-Doom'],imp:'new-generation',
+  why:'Released April 3, 2026 — the second part of the trilogy, continuing the same day as Sunn O)))\'s comeback album, purely by release-calendar coincidence.',
+  tracks:[{n:'Sanguis (Blood Ties)'},{n:'I Am Time'}]}),
+A({era:'e2020',year:2026,band:'Castle Rat',album:'The Bestiary',country:'USA',sub:['Traditional Doom','Psychedelic Doom'],imp:'new-generation',
+  why:'Released April 17, 2026 — fantasy-themed, riff-driven doom from one of the younger bands actively touring the current scene.',
+  tracks:[{n:'The Bestiary'}]}),
+A({era:'e2020',year:2026,band:'Sunn O)))',album:'Sunn O)))',country:'USA',sub:['Drone Doom'],imp:'modern-landmark',
+  why:'Released April 3, 2026 via Sub Pop — the duo\'s tenth studio album and first new material since 2019\'s Pyroclasts, produced by Brad Wood and built entirely around Anderson and O\'Malley themselves, with no additional musicians.',
+  tracks:[{n:'Glory Black'},{n:'Butch\'s Guns'}],essential:true,
+  previous:['Sunn O))) (Black One)'], next:[]}),
+A({era:'e2020',year:2026,band:'Elder',album:'Through Zero',country:'Germany/USA',sub:['Psychedelic Doom','Stoner Doom'],imp:'new-generation',
+  why:'Released May 29, 2026 via Stickman/Blues Funeral — the band\'s seventh album and first self-produced record, written and recorded in Berlin between tours.',
+  tracks:[{n:'Sigil to Ruin'},{n:'Through Zero'},{n:'Blighted Age'}],essential:true,
+  previous:['Elder (Lore)'], next:[]}),
+A({era:'e2020',year:2026,band:'Khemmis',album:'Khemmis',country:'USA',sub:['Traditional Doom','Epic Doom'],imp:'modern-landmark',
+  why:'Released June 12, 2026 via Nuclear Blast — the band\'s first self-titled album, described by the band as a deliberate "reset" toward a tighter, higher-energy version of their sound after five years away.',
+  tracks:[{n:'Invocation of the Dreamer'},{n:'Corpsebloom Garden'},{n:'Carrion King'}],essential:true,
+  previous:['Khemmis (Absolution)'], next:[]}),
+];
+
+// assign journey order (curated sequence of ~24 records tracing the lineage)
+const JOURNEY_SEQUENCE = [
+  ['Black Sabbath','Black Sabbath'],
+  ['Pentagram','Relentless'],
+  ['Saint Vitus','Born Too Late'],
+  ['Trouble','Psalm 9'],
+  ['Candlemass','Epicus Doomicus Metallicus'],
+  ['Cathedral','Forest of Equilibrium'],
+  ['Paradise Lost','Gothic'],
+  ['My Dying Bride','Turn Loose the Swans'],
+  ['Disembowelment','Transcendence into the Peripheral'],
+  ['Sleep',"Sleep's Holy Mountain"],
+  ['Eyehategod','Take as Needed for Pain'],
+  ['Thergothon','Stream from the Heavens'],
+  ['Skepticism','Stormcrowfleet'],
+  ['Electric Wizard','Dopethrone'],
+  ['Sunn O)))','Black One'],
+  ['Neurosis','Through Silver in Blood'],
+  ['Ahab','The Call of the Wretched Sea'],
+  ['Yob','The Great Cessation'],
+  ['Pallbearer','Sorrow and Extinction'],
+  ['Windhand','Windhand'],
+  ['Bell Witch','Longing'],
+  ['Elder','Lore'],
+  ['Khemmis','Absolution'],
+  ['Bell Witch','Mirror Reaper'],
+];
+JOURNEY_SEQUENCE.forEach((pair,i)=>{
+  const found = ALBUMS.find(a=>a.band===pair[0] && a.album===pair[1]);
+  if(found) found.journey = i+1;
+});
+
+// normalize subgenre field naming (sub -> subgenre for consistency)
+ALBUMS.forEach(a=>{a.subgenre=a.sub;});
+
+// curated "essential albums" canon — indispensable records for understanding the arc,
+// judged separately from the per-record "Essential" importance tag.
+const ESSENTIAL_CANON = [
+  ['Black Sabbath','Black Sabbath'],
+  ['Pentagram','Relentless'],
+  ['Saint Vitus','Born Too Late'],
+  ['Trouble','Psalm 9'],
+  ['Candlemass','Epicus Doomicus Metallicus'],
+  ['Cathedral','Forest of Equilibrium'],
+  ['Paradise Lost','Gothic'],
+  ['My Dying Bride','Turn Loose the Swans'],
+  ['Disembowelment','Transcendence into the Peripheral'],
+  ['Thergothon','Stream from the Heavens'],
+  ['Skepticism','Stormcrowfleet'],
+  ['Sleep',"Sleep's Holy Mountain"],
+  ['Sleep','Jerusalem / Dopesmoker'],
+  ['Eyehategod','Take as Needed for Pain'],
+  ['Electric Wizard','Dopethrone'],
+  ['Sunn O)))','Black One'],
+  ['Neurosis','Through Silver in Blood'],
+  ['Yob','The Great Cessation'],
+  ['Ahab','The Call of the Wretched Sea'],
+  ['Bell Witch','Mirror Reaper'],
+  ['Pallbearer','Foundations of Burden'],
+  ['Khemmis','Absolution'],
+  ['Elder','Lore'],
+  ['Sunn O)))','Sunn O)))'],
+  ['Elder','Through Zero'],
+  ['Khemmis','Khemmis'],
+];
+ALBUMS.forEach(a=>{a.essential=false;});
+ESSENTIAL_CANON.forEach(pair=>{
+  const found = ALBUMS.find(a=>a.band===pair[0] && a.album===pair[1]);
+  if(found) found.essential = true;
+});
+
+/* =========================================================
+   ALBUM COVERS — iTunes Search API
+   =========================================================
+   No key, no signup, nothing to configure — iTunes' public search
+   endpoint is open and CORS-friendly. If it can't find a confident
+   match (or the band isn't on Apple Music at all), the designed
+   plate stays as-is. That's expected for smaller/underground bands —
+   iTunes' catalog skews toward commercially distributed releases.
+========================================================= */
+const COVER_CACHE_KEY = 'doom_cover_cache_v1';
+let coverCache = {};
+try{ coverCache = JSON.parse(localStorage.getItem(COVER_CACHE_KEY) || '{}'); }catch(e){ coverCache = {}; }
+function saveCoverCache(){
+  try{ localStorage.setItem(COVER_CACHE_KEY, JSON.stringify(coverCache)); }catch(e){ /* storage full or unavailable — fine, just skip caching */ }
+}
+function coverKey(band, album){ return (band+'::'+album).toLowerCase(); }
+function norm(s){ return s.toLowerCase().replace(/[^a-z0-9]/g,''); }
+
+async function fetchCoverUrl(band, album){
+  const key = coverKey(band, album);
+  if(coverCache[key] !== undefined) return coverCache[key];
+  try{
+    const url = 'https://itunes.apple.com/search?entity=album&limit=5&term='
+      + encodeURIComponent(band + ' ' + album);
+    const res = await fetch(url);
+    if(!res.ok){ coverCache[key] = null; saveCoverCache(); return null; }
+    const data = await res.json();
+    const results = (data && data.results) || [];
+    // require the artist name to actually match — iTunes search is fuzzy and
+    // will happily return an unrelated result rather than nothing
+    const nb = norm(band);
+    const match = results.find(r => r.artworkUrl100 && norm(r.artistName||'').includes(nb.slice(0,6)))
+      || results.find(r => r.artworkUrl100);
+    // upsize iTunes' default 100x100 thumbnail to a real cover resolution
+    const found = match ? match.artworkUrl100.replace('100x100bb', '600x600bb') : null;
+    coverCache[key] = found;
+    saveCoverCache();
+    return found;
+  }catch(e){
+    return null; // network hiccup or blocked — don't cache, just fall back this time
+  }
+}
+
+function applyCoverToPlate(plateEl, url){
+  if(!url || plateEl.querySelector('.ac-cover-img')) return;
+  const img = document.createElement('img');
+  img.className = 'ac-cover-img';
+  img.alt = '';
+  img.loading = 'lazy';
+  img.src = url;
+  img.onload = ()=>{ img.classList.add('loaded'); plateEl.classList.add('has-cover'); };
+  img.onerror = ()=>{ img.remove(); }; // dead link — keep the designed plate, no broken icon
+  plateEl.appendChild(img);
+}
+
+const coverObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, obs)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const el = entry.target;
+    obs.unobserve(el);
+    const band = el.dataset.band, album = el.dataset.album;
+    if(!band || !album) return;
+    fetchCoverUrl(band, album).then(url=>applyCoverToPlate(el, url));
+  });
+}, {rootMargin:'200px 0px'}) : null;
+
+function observeCovers(root){
+  const plates = root.querySelectorAll('.ac-plate[data-band], .modal-plate[data-band]');
+  plates.forEach(el=>{
+    if(coverObserver) coverObserver.observe(el);
+    else { // no IntersectionObserver support — just fetch directly
+      fetchCoverUrl(el.dataset.band, el.dataset.album).then(url=>applyCoverToPlate(el, url));
+    }
+  });
+}
+
+/* =========================================================
+   STATE
+   ========================================================= */
+const state = { era:'All', sub:'All', imp:'All', query:'' };
+
+/* =========================================================
+   RENDER: FILTER CHIPS
+   ========================================================= */
+function buildChips(containerId, values, key){
+  const el = document.getElementById(containerId);
+  const all = ['All', ...values];
+  el.innerHTML = all.map(v=>`<button class="chip${v==='All'?' active':''}" data-key="${key}" data-val="${v}">${v}</button>`).join('');
+}
+buildChips('filterEra', ERA_BUCKETS, 'era');
+buildChips('filterSub', SUBGENRES, 'sub');
+buildChips('filterImp', Object.values(IMPORTANCE), 'imp');
+
+document.querySelectorAll('.chip-row').forEach(row=>{
+  row.addEventListener('click', e=>{
+    const btn = e.target.closest('.chip');
+    if(!btn) return;
+    const key = btn.dataset.key, val = btn.dataset.val;
+    state[key] = val;
+    row.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c===btn));
+    render();
+  });
+});
+document.getElementById('resetFilters').addEventListener('click', ()=>{
+  state.era='All'; state.sub='All'; state.imp='All';
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.val==='All'));
+  render();
+});
+
+/* =========================================================
+   FILTER LOGIC
+   ========================================================= */
+function importanceLabel(key){return IMPORTANCE[key]||key;}
+function matches(album){
+  if(state.era!=='All'){
+    const eraDef = ERAS.find(e=>e.key===album.era);
+    if(!eraDef || eraDef.bucket!==state.era) return false;
+  }
+  if(state.sub!=='All' && !album.subgenre.includes(state.sub)) return false;
+  if(state.imp!=='All' && importanceLabel(album.imp)!==state.imp) return false;
+  return true;
+}
+
+/* =========================================================
+   RENDER: TIMELINE
+   ========================================================= */
+function albumCardHTML(a){
+  const initials = a.band.split(' ').map(w=>w[0]).slice(0,3).join('');
+  return `<button class="album-card" data-id="${a.id}">
+    <div class="ac-plate" data-band="${a.band.replace(/"/g,'&quot;')}" data-album="${a.album.replace(/"/g,'&quot;')}" aria-hidden="true">
+      <span class="plate-yr">${a.year}</span>
+      <span class="plate-initial">${initials}</span>
+      <span class="ac-arrow">↗</span>
+    </div>
+    <div class="ac-body">
+      <div class="ac-band">${a.band}</div>
+      <div class="ac-title">${a.album}</div>
+      <div class="ac-tags">
+        <span class="tag importance">${importanceLabel(a.imp)}</span>
+        ${a.subgenre.slice(0,1).map(s=>`<span class="tag">${s}</span>`).join('')}
+      </div>
+    </div>
+  </button>`;
+}
+
+function render(){
+  const main = document.getElementById('timelineMain');
+  let visibleCount = 0;
+  let html = '';
+  ERAS.forEach(eraDef=>{
+    const items = ALBUMS.filter(a=>a.era===eraDef.key && matches(a));
+    if(state.era!=='All' && eraDef.bucket!==state.era) return;
+    visibleCount += items.length;
+    html += `<section class="section" id="${eraDef.key}">
+      <div class="wrap">
+        <div class="era-head">
+          <div class="yr display">${eraDef.range}</div>
+          <div class="info">
+            <h2>${eraDef.title}</h2>
+            <p>${eraDef.blurb}</p>
+          </div>
+        </div>
+        ${items.length ? `<div class="album-grid">${items.map(albumCardHTML).join('')}</div>` : `<p class="empty-state">No albums in this era match the current filters.</p>`}
+      </div>
+    </section>`;
+  });
+  main.innerHTML = html;
+  document.getElementById('filterCount').textContent = visibleCount+' albums shown';
+  attachCardHandlers();
+  observeCovers(main);
+}
+
+function attachCardHandlers(){
+  document.querySelectorAll('.album-card').forEach(btn=>{
+    btn.addEventListener('click', ()=>openModal(btn.dataset.id));
+  });
+}
+
+/* =========================================================
+   ERA SCROLLER
+   ========================================================= */
+document.getElementById('eraScroller').innerHTML = ERAS.map(e=>
+  `<button class="era-jump" data-scroll="${e.key}"><span class="ej-range">${e.range}</span><span>${e.title}</span></button>`
+).join('');
+
+document.addEventListener('click', e=>{
+  const btn = e.target.closest('[data-scroll]');
+  if(!btn) return;
+  const target = document.getElementById(btn.dataset.scroll);
+  if(target) target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+});
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+function findByLabel(label){
+  // labels used in previous/next may include parenthetical album disambiguation
+  const cleanBand = label.replace(/\s*\(.*\)$/,'');
+  return ALBUMS.find(a=>a.band===cleanBand) || null;
+}
+
+function modalHTML(a){
+  const initials = a.band.split(' ').map(w=>w[0]).slice(0,3).join('');
+  const prevList = a.previous.length ? a.previous.map(p=>`<li>${p}</li>`).join('') : '<li>No documented prior generation</li>';
+  const nextList = a.next.length ? a.next.map(p=>`<li>${p}</li>`).join('') : '<li>Too recent to trace forward</li>';
+  return `
+  <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+  <div class="modal-head">
+    <div class="modal-plate" data-band="${a.band.replace(/"/g,'&quot;')}" data-album="${a.album.replace(/"/g,'&quot;')}" aria-hidden="true"><span>${initials}</span></div>
+    <div class="modal-head-text">
+      <div class="m-band">${a.band} · ${a.year} · ${a.country||'—'}</div>
+      <h3 id="modalTitle">${a.album}</h3>
+      <div class="modal-meta">
+        <span class="tag importance">${importanceLabel(a.imp)}</span>
+        ${a.subgenre.map(s=>`<span class="tag">${s}</span>`).join('')}
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="mb-block">
+      <h4>Why it matters</h4>
+      <p>${a.why}</p>
+    </div>
+    ${a.tracks.length ? `<div class="mb-block">
+      <h4>Recommended tracks</h4>
+      <ul class="track-list">
+        ${a.tracks.map(t=>`<li><span>${t.n}</span><a class="btn small" href="${yt(a.band+' '+t.n)}" target="_blank" rel="noopener">Watch</a></li>`).join('')}
+      </ul>
+    </div>` : ''}
+    <div class="mb-block">
+      <h4>Where did this come from?</h4>
+      <div class="gen-flow">
+        <div class="gen-col"><div class="gen-label">Previous generation</div><ul>${prevList}</ul></div>
+        <div class="gen-col current"><div class="gen-label">This record</div><ul><li>${a.band} — ${a.album}</li></ul></div>
+        <div class="gen-col"><div class="gen-label">Next generation</div><ul>${nextList}</ul></div>
+      </div>
+    </div>
+    <div class="mb-block">
+      <h4>Listen</h4>
+      <div class="link-row">
+        <a class="btn" href="${a.spotify}" target="_blank" rel="noopener">▶ Spotify</a>
+        <a class="btn" href="${a.youtube}" target="_blank" rel="noopener">▶ YouTube</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+let lastFocused = null;
+function openModal(id){
+  const a = ALBUMS.find(x=>x.id===id);
+  if(!a) return;
+  lastFocused = document.activeElement;
+  document.getElementById('modalContent').innerHTML = modalHTML(a);
+  const backdrop = document.getElementById('modalBackdrop');
+  backdrop.classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.getElementById('modalCloseBtn').focus();
+  observeCovers(document.getElementById('modalContent'));
+}
+function closeModal(){
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow='';
+  if(lastFocused) lastFocused.focus();
+}
+document.getElementById('modalBackdrop').addEventListener('click', e=>{
+  if(e.target.id==='modalBackdrop') closeModal();
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){
+    closeModal();
+    closeSearch();
+  }
+});
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+function openSearch(){
+  searchOverlay.classList.add('open');
+  searchInput.value='';
+  document.getElementById('searchResults').innerHTML='';
+  setTimeout(()=>searchInput.focus(), 30);
+}
+function closeSearch(){ searchOverlay.classList.remove('open'); }
+document.getElementById('openSearch').addEventListener('click', openSearch);
+document.getElementById('closeSearch').addEventListener('click', closeSearch);
+
+searchInput.addEventListener('input', ()=>{
+  const q = searchInput.value.trim().toLowerCase();
+  const results = document.getElementById('searchResults');
+  if(!q){ results.innerHTML=''; return; }
+  const hits = ALBUMS.filter(a=>{
+    return a.band.toLowerCase().includes(q) ||
+      a.album.toLowerCase().includes(q) ||
+      String(a.year).includes(q) ||
+      a.subgenre.some(s=>s.toLowerCase().includes(q)) ||
+      a.tracks.some(t=>t.n.toLowerCase().includes(q)) ||
+      importanceLabel(a.imp).toLowerCase().includes(q);
+  }).slice(0,40);
+  results.innerHTML = hits.length ? hits.map(a=>`
+    <button class="search-result" data-id="${a.id}">
+      <span class="sr-year display">${a.year}</span>
+      <span><strong>${a.band}</strong> — ${a.album}<br><span class="sr-meta">${a.subgenre.join(', ')} · ${importanceLabel(a.imp)}</span></span>
+    </button>`).join('') : `<p class="search-hint">No matches for "${q}".</p>`;
+  results.querySelectorAll('.search-result').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ closeSearch(); openModal(btn.dataset.id); });
+  });
+});
+
+/* =========================================================
+   FAMILY TREE
+   ========================================================= */
+const TREE = [
+  {band:'Black Sabbath', year:'1970'},
+  {branch:['Pentagram','Witchfinder General','Saint Vitus'], year:'1971–84'},
+  {band:'Candlemass', year:'1986'},
+  {branch:['Paradise Lost','My Dying Bride','Cathedral'], year:'1990–93'},
+  {branch:['Thergothon','Skepticism','Sleep'], year:'1992–95'},
+  {branch:['Electric Wizard','Sunn O)))','Neurosis'], year:'1996–2005'},
+  {branch:['Yob','Bell Witch','Pallbearer'], year:'2009–14'},
+  {branch:['Khemmis','Elder','Windhand'], year:'2015–26'},
+];
+function treeHTML(){
+  let html='';
+  TREE.forEach((node,i)=>{
+    if(i>0) html += `<div class="tree-connector" aria-hidden="true"></div>`;
+    if(node.branch){
+      html += `<div class="tree-branch-row">${node.branch.map(b=>`
+        <div class="tree-branch">
+          <div class="tree-node"><div class="tn-band">${b}</div><div class="tn-year">${node.year}</div></div>
+        </div>`).join('')}</div>`;
+    } else {
+      html += `<div class="tree-node"><div class="tn-band">${node.band}</div><div class="tn-year">${node.year}</div></div>`;
+    }
+  });
+  return html;
+}
+document.getElementById('treeContainer').innerHTML = treeHTML();
+
+/* =========================================================
+   COMPARISON TABLE
+   ========================================================= */
+const COMPARE_ATTRS = ['Tempo','Distortion / fuzz','Vocal harshness','Song length','Reverb / atmosphere','Melody','Production polish','Genre-blending'];
+const COMPARE_DATA = {
+  1985: [1,2,1,2,1,2,1,1],
+  1995: [1,3,3,3,3,2,2,2],
+  2010: [1,3,2,3,3,3,3,3],
+  2025: [1,3,2,4,3,3,4,4],
+};
+const QUAL_WORDS = ['—','Low','Medium','High','Very High'];
+function compareTableHTML(){
+  const years = Object.keys(COMPARE_DATA);
+  let html = `<thead><tr><th>Attribute</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead><tbody>`;
+  COMPARE_ATTRS.forEach((attr,ai)=>{
+    html += `<tr><td class="attr">${attr}</td>`;
+    years.forEach(y=>{
+      const lvl = COMPARE_DATA[y][ai];
+      html += `<td><div class="qual-bar">${[1,2,3,4].map(n=>`<span class="qual-seg${n<=lvl?' on':''}"></span>`).join('')}<span class="qual-word">${QUAL_WORDS[lvl]}</span></div></td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody>';
+  return html;
+}
+document.getElementById('compareTable').innerHTML = compareTableHTML();
+
+/* =========================================================
+   THE CLASS OF 2026
+   ========================================================= */
+const NGW = [
+  {name:'Sunn O)))', loc:'USA · Sub Pop', releases:[
+    {t:'Black One', y:'2005'}, {t:'Sunn O))) (self-titled)', y:'3 Apr 2026'}
+  ]},
+  {name:'Elder', loc:'Germany/USA · Stickman / Blues Funeral', releases:[
+    {t:'Lore', y:'2015'}, {t:'Through Zero', y:'29 May 2026'}
+  ]},
+  {name:'Khemmis', loc:'Denver, USA · Nuclear Blast', releases:[
+    {t:'Deceiver', y:'2021'}, {t:'Khemmis (self-titled)', y:'12 Jun 2026'}
+  ]},
+];
+document.getElementById('ngwGrid').innerHTML = NGW.map(b=>`
+  <div class="ngw-card">
+    <h3>${b.name}</h3>
+    <div class="ngw-loc">${b.loc}</div>
+    ${b.releases.map(r=>`<div class="ngw-release"><span>${r.t}</span><span>${r.y}</span></div>`).join('')}
+    <div class="link-row" style="margin-top:14px;">
+      <a class="btn small" href="${sp(b.name)}" target="_blank" rel="noopener">Spotify</a>
+      <a class="btn small" href="${yt(b.name)}" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+`).join('');
+
+/* =========================================================
+   ESSENTIAL ALBUMS
+   ========================================================= */
+document.getElementById('essentialGrid').innerHTML = ALBUMS.filter(a=>a.essential).map(albumCardHTML).join('');
+observeCovers(document.getElementById('essentialGrid'));
+
+/* =========================================================
+   LISTENING JOURNEY
+   ========================================================= */
+function journeyHTML(){
+  const items = ALBUMS.filter(a=>a.journey).sort((a,b)=>a.journey-b.journey);
+  return items.map(a=>`
+    <div class="journey-item">
+      <div class="j-num display">${String(a.journey).padStart(2,'0')}</div>
+      <div>
+        <div class="j-band">${a.band} · ${a.year}</div>
+        <div class="j-title">${a.album}</div>
+      </div>
+      <div class="j-links">
+        <a class="btn small" href="${a.spotify}" target="_blank" rel="noopener">Spotify</a>
+        <a class="btn small" href="${a.youtube}" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>`).join('');
+}
+document.getElementById('journeyList').innerHTML = journeyHTML();
+document.getElementById('startJourneyHero').addEventListener('click', ()=>{
+  document.getElementById('journey').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+/* =========================================================
+   SPLIT SECTION
+   ========================================================= */
+const SPLIT = [
+  {label:'Funeral', bands:'Skepticism, Ahab', desc:'Glacial tempo, organ drones, and grief stretched past the point most listeners can sit with.'},
+  {label:'Sludge', bands:'Eyehategod, Conan', desc:'Doom weight fused with hardcore filth and, in Conan\'s case, deliberate primitivism.'},
+  {label:'Stoner / Psych', bands:'Elder, Sleep', desc:'Fuzz, groove, and increasingly prog-rock structure built on top of a Sabbath foundation.'},
+  {label:'Drone', bands:'Sunn O))), Boris', desc:'Barely any riffs at all — just sustained, overwhelming low-end tone as the entire composition.'},
+  {label:'Modern Traditional', bands:'Khemmis, Pallbearer', desc:'Clean vocal melody and classic-doom riffing built for a generation raised on both doom and heavy metal.'},
+];
+document.getElementById('splitGrid').innerHTML = SPLIT.map(s=>`
+  <div class="split-cell">
+    <h4>${s.label}</h4>
+    <p><strong>${s.bands}</strong></p>
+    <p>${s.desc}</p>
+  </div>`).join('');
+
+/* =========================================================
+   SOURCES
+   ========================================================= */
+const SOURCES = [
+  {t:'Sunn O))) — self-titled album (Sub Pop)', u:'https://www.subpop.com/news/2026/01/13/sub_pop_to_release_sunn_o_s_self_titled_new_album_worldwide_on_friday_april_3rd_2026'},
+  {t:'Elder — Through Zero (Blues Funeral Recordings)', u:'https://beholdtheelder.com/through-zero.html'},
+  {t:'Khemmis — self-titled album (Nuclear Blast)', u:'https://www.nuclearblast.com/pages/khemmis'},
+  {t:'Green Carnation — A Dark Poem, Pt. II: Sanguis (Wikipedia)', u:'https://en.wikipedia.org/wiki/A_Dark_Poem,_Pt._II:_Sanguis'},
+  {t:'Sleep — Dopesmoker release history (Wikipedia)', u:'https://en.wikipedia.org/wiki/Dopesmoker'},
+  {t:'Thergothon — Stream from the Heavens (Wikipedia)', u:'https://en.wikipedia.org/wiki/Thergothon'},
+];
+document.getElementById('sourcesList').innerHTML = SOURCES.map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${s.t}</a></li>`).join('');
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+function buildMarquee(elId, phrases){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  const doubled = phrases.concat(phrases);
+  el.innerHTML = doubled.map(p=>`<span>${p}</span>`).join('');
+}
+buildMarquee('marqueeTrack', ['1970–2026','SLOWER IS NOT SIMPLER','TRADITIONAL DOOM','EPIC DOOM','DEATH-DOOM','FUNERAL DOOM','SLUDGE','STONER DOOM','DRONE']);
+buildMarquee('marqueeTrack2', ['NO STRAIGHT LINE','FOUNDATIONAL','GENRE DEFINING','ESSENTIAL','MODERN LANDMARK','NEW GENERATION','SONIC LINEAGE']);
+
+/* =========================================================
+   ACTIVE NAV HIGHLIGHT ON SCROLL
+   ========================================================= */
+const navLinks = document.querySelectorAll('.navlink[data-scroll]');
+const sectionKeys = ['e1970','e1980','e1990','e2000','e2010','e2020','map','essential'];
+function updateActiveNav(){
+  let current = sectionKeys[0];
+  sectionKeys.forEach(key=>{
+    const el = document.getElementById(key);
+    if(el && el.getBoundingClientRect().top < 140) current = key;
+  });
+  navLinks.forEach(l=>l.classList.toggle('active', l.dataset.scroll===current));
+}
+window.addEventListener('scroll', ()=>requestAnimationFrame(updateActiveNav), {passive:true});
+
+/* =========================================================
+   INIT
+   ========================================================= */
+render();
+updateActiveNav();
+</script>
+</body>
+</html>
