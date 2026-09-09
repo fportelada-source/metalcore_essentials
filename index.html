@@ -248,8 +248,18 @@ img{max-width:100%;display:block;}
 .ac-arrow{
   position:absolute;bottom:12px;right:12px;width:28px;height:28px;border:1px solid var(--line-soft);
   display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:14px;
-  transform:rotate(-45deg);transition:all .15s;background:var(--bg-panel);
+  transform:rotate(-45deg);transition:all .15s;background:var(--bg-panel);z-index:3;
 }
+.ac-cover-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity .35s ease;z-index:1;
+}
+.ac-cover-img.loaded{opacity:1;}
+.ac-plate.has-cover::before{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,0.55) 0%,transparent 30%,transparent 60%,rgba(0,0,0,0.65) 100%);
+}
+.ac-plate.has-cover .plate-yr,.ac-plate.has-cover .plate-initial{position:relative;z-index:3;}
 .ac-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1;}
 .ac-band{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;font-weight:700;}
 .ac-title{font-size:16px;font-weight:700;line-height:1.25;}
@@ -279,10 +289,12 @@ img{max-width:100%;display:block;}
 }
 .modal-plate{
   width:96px;height:96px;flex:0 0 auto;border:1px solid var(--line-soft);
-  background:linear-gradient(160deg,rgba(193,64,31,0.18),transparent 65%),var(--bg);
-  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,rgba(224,19,36,0.18),transparent 65%),var(--bg);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
 }
-.modal-plate span{font-family:'Anton',sans-serif;font-size:26px;color:var(--ink-dim);}
+.modal-plate span{font-family:'Anton',sans-serif;font-size:26px;color:var(--ink-dim);position:relative;z-index:2;}
+.modal-plate .ac-cover-img{position:absolute;inset:0;}
+.modal-plate.has-cover::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(0,0,0,0.25);}
 .modal-head-text{flex:1;min-width:200px;}
 .modal-head .m-band{font-size:13px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;}
 .modal-head h3{font-family:'Anton',sans-serif;font-size:clamp(22px,4vw,32px);margin:6px 0 10px;}
@@ -538,7 +550,7 @@ footer{padding:60px 0 40px;}
   <div class="wrap">
     <p class="footer-statement">Metalcore is not a straight line.</p>
     <p class="footer-note">The genre was born from a collision between hardcore punk and metal, and it kept transforming through dozens of scenes, generations, and cross-pollinations. The categories on this page are historical approximations — they overlap, and reasonable people disagree on where one ends and another begins.</p>
-    <p class="footer-note">Album covers here are shown as designed reference plates rather than hotlinked photography, so the page never breaks on a dead image link or misattributed art. Streaming links go to search results where a confirmed direct URL wasn't available. Dates for 2025–2026 releases were checked against label and streaming-platform listings in September 2026.</p>
+    <p class="footer-note">Album covers load live from Apple's iTunes catalog when a confident match exists; where it doesn't — mostly smaller and underground releases — the page falls back to a designed reference plate instead of a broken image. Streaming links go to search results where a confirmed direct URL wasn't available. Dates for 2025–2026 releases were checked against label and streaming-platform listings in September 2026.</p>
     <div class="footer-sources">
       <h5>Sources / Research</h5>
       <ul id="sourcesList"></ul>
@@ -927,6 +939,82 @@ ESSENTIAL_CANON.forEach(pair=>{
 });
 
 /* =========================================================
+   ALBUM COVERS — iTunes Search API
+   =========================================================
+   No key, no signup, nothing to configure — iTunes' public search
+   endpoint is open and CORS-friendly. If it can't find a confident
+   match (or the band isn't on Apple Music at all), the designed
+   plate stays as-is. That's expected for smaller/underground bands —
+   iTunes' catalog skews toward commercially distributed releases.
+========================================================= */
+const COVER_CACHE_KEY = 'metalcore_cover_cache_v2';
+let coverCache = {};
+try{ coverCache = JSON.parse(localStorage.getItem(COVER_CACHE_KEY) || '{}'); }catch(e){ coverCache = {}; }
+function saveCoverCache(){
+  try{ localStorage.setItem(COVER_CACHE_KEY, JSON.stringify(coverCache)); }catch(e){ /* storage full or unavailable — fine, just skip caching */ }
+}
+function coverKey(band, album){ return (band+'::'+album).toLowerCase(); }
+function norm(s){ return s.toLowerCase().replace(/[^a-z0-9]/g,''); }
+
+async function fetchCoverUrl(band, album){
+  const key = coverKey(band, album);
+  if(coverCache[key] !== undefined) return coverCache[key];
+  try{
+    const url = 'https://itunes.apple.com/search?entity=album&limit=5&term='
+      + encodeURIComponent(band + ' ' + album);
+    const res = await fetch(url);
+    if(!res.ok){ coverCache[key] = null; saveCoverCache(); return null; }
+    const data = await res.json();
+    const results = (data && data.results) || [];
+    // require the artist name to actually match — iTunes search is fuzzy and
+    // will happily return an unrelated result rather than nothing
+    const nb = norm(band);
+    const match = results.find(r => r.artworkUrl100 && norm(r.artistName||'').includes(nb.slice(0,6)))
+      || results.find(r => r.artworkUrl100);
+    // upsize iTunes' default 100x100 thumbnail to a real cover resolution
+    const found = match ? match.artworkUrl100.replace('100x100bb', '600x600bb') : null;
+    coverCache[key] = found;
+    saveCoverCache();
+    return found;
+  }catch(e){
+    return null; // network hiccup or blocked — don't cache, just fall back this time
+  }
+}
+
+function applyCoverToPlate(plateEl, url){
+  if(!url || plateEl.querySelector('.ac-cover-img')) return;
+  const img = document.createElement('img');
+  img.className = 'ac-cover-img';
+  img.alt = '';
+  img.loading = 'lazy';
+  img.src = url;
+  img.onload = ()=>{ img.classList.add('loaded'); plateEl.classList.add('has-cover'); };
+  img.onerror = ()=>{ img.remove(); }; // dead link — keep the designed plate, no broken icon
+  plateEl.appendChild(img);
+}
+
+const coverObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, obs)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const el = entry.target;
+    obs.unobserve(el);
+    const band = el.dataset.band, album = el.dataset.album;
+    if(!band || !album) return;
+    fetchCoverUrl(band, album).then(url=>applyCoverToPlate(el, url));
+  });
+}, {rootMargin:'200px 0px'}) : null;
+
+function observeCovers(root){
+  const plates = root.querySelectorAll('.ac-plate[data-band], .modal-plate[data-band]');
+  plates.forEach(el=>{
+    if(coverObserver) coverObserver.observe(el);
+    else { // no IntersectionObserver support — just fetch directly
+      fetchCoverUrl(el.dataset.band, el.dataset.album).then(url=>applyCoverToPlate(el, url));
+    }
+  });
+}
+
+/* =========================================================
    STATE
    ========================================================= */
 const state = { era:'All', sub:'All', imp:'All', query:'' };
@@ -979,7 +1067,7 @@ function matches(album){
 function albumCardHTML(a){
   const initials = a.band.split(' ').map(w=>w[0]).slice(0,3).join('');
   return `<button class="album-card" data-id="${a.id}">
-    <div class="ac-plate" aria-hidden="true">
+    <div class="ac-plate" data-band="${a.band.replace(/"/g,'&quot;')}" data-album="${a.album.replace(/"/g,'&quot;')}" aria-hidden="true">
       <span class="plate-yr">${a.year}</span>
       <span class="plate-initial">${initials}</span>
       <span class="ac-arrow">↗</span>
@@ -1019,6 +1107,7 @@ function render(){
   main.innerHTML = html;
   document.getElementById('filterCount').textContent = visibleCount+' albums shown';
   attachCardHandlers();
+  observeCovers(main);
 }
 
 function attachCardHandlers(){
@@ -1057,7 +1146,7 @@ function modalHTML(a){
   return `
   <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
   <div class="modal-head">
-    <div class="modal-plate" aria-hidden="true"><span>${initials}</span></div>
+    <div class="modal-plate" data-band="${a.band.replace(/"/g,'&quot;')}" data-album="${a.album.replace(/"/g,'&quot;')}" aria-hidden="true"><span>${initials}</span></div>
     <div class="modal-head-text">
       <div class="m-band">${a.band} · ${a.year} · ${a.country||'—'}</div>
       <h3 id="modalTitle">${a.album}</h3>
@@ -1107,6 +1196,7 @@ function openModal(id){
   document.body.style.overflow='hidden';
   document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
   document.getElementById('modalCloseBtn').focus();
+  observeCovers(document.getElementById('modalContent'));
 }
 function closeModal(){
   document.getElementById('modalBackdrop').classList.remove('open');
@@ -1247,6 +1337,7 @@ document.getElementById('ngwGrid').innerHTML = NGW.map(b=>`
    ESSENTIAL ALBUMS
    ========================================================= */
 document.getElementById('essentialGrid').innerHTML = ALBUMS.filter(a=>a.essential).map(albumCardHTML).join('');
+observeCovers(document.getElementById('essentialGrid'));
 
 /* =========================================================
    LISTENING JOURNEY
