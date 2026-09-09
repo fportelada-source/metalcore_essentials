@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Evolution of Metalcore — 1979–2026</title>
+<meta name="description" content="A visual record of how metalcore split, branched and reformed, from hardcore basements to 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080808;
+  --bg-panel:#0f0f10;
+  --bg-panel-2:#161617;
+  --line:#262626;
+  --line-soft:#1a1a1a;
+  --ink:#f2f1ee;
+  --ink-dim:#9c9c9c;
+  --ink-faint:#5c5c5c;
+  --accent:#e01324;
+  --accent-bright:#ff2f3d;
+  --accent-dim:#3d0a0e;
+  --focus:#ff2f3d;
+  --maxw:1240px;
+  --script:'Caveat',cursive;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:800;}
+p{margin:0;}
+a{color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+img{max-width:100%;display:block;}
+.display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:0.01em;text-transform:uppercase;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ===== NAV ===== */
+.topnav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,10,9,0.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.topnav-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;gap:6px;height:56px;overflow-x:auto;
+  scrollbar-width:none;
+}
+.topnav-inner::-webkit-scrollbar{display:none;}
+.brand{
+  font-family:'Anton',sans-serif;font-size:15px;letter-spacing:0.04em;
+  color:var(--ink);text-decoration:none;white-space:nowrap;margin-right:14px;
+  border-right:1px solid var(--line);padding-right:14px;
+}
+.brand span{color:var(--accent-bright);}
+.navlink{
+  background:none;border:none;color:var(--ink-dim);font-size:13px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;padding:8px 10px;
+  border-bottom:2px solid transparent;display:flex;align-items:center;gap:5px;
+}
+.navlink::before{content:"▸";color:var(--accent);font-size:10px;opacity:0;transition:opacity .12s;}
+.navlink:hover{color:var(--ink);}
+.navlink:hover::before,.navlink.active::before{opacity:1;}
+.navlink.active{color:var(--ink);border-bottom-color:var(--accent);}
+.nav-search-btn{
+  margin-left:auto;flex:0 0 auto;background:var(--bg-panel);border:1px solid var(--line);
+  color:var(--ink);width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+}
+.nav-search-btn:hover{border-color:var(--accent);}
+
+/* ===== SEARCH OVERLAY ===== */
+.search-overlay{
+  position:fixed;inset:0;z-index:100;background:rgba(6,6,5,0.92);
+  display:none;flex-direction:column;padding:80px 20px 20px;
+}
+.search-overlay.open{display:flex;}
+.search-box{max-width:760px;margin:0 auto;width:100%;}
+.search-box input{
+  width:100%;background:transparent;border:none;border-bottom:2px solid var(--accent);
+  color:var(--ink);font-family:'Anton',sans-serif;font-size:clamp(28px,6vw,52px);
+  padding:10px 0;letter-spacing:0.01em;
+}
+.search-box input:focus{outline:none;}
+.search-hint{color:var(--ink-faint);font-size:13px;margin-top:10px;letter-spacing:0.03em;}
+.search-close{
+  position:absolute;top:22px;right:24px;background:none;border:1px solid var(--line);
+  color:var(--ink);width:38px;height:38px;font-size:18px;
+}
+.search-results{max-width:760px;margin:26px auto 0;width:100%;overflow-y:auto;flex:1;}
+.search-result{
+  display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line-soft);
+  background:none;border-left:none;border-right:none;border-top:none;width:100%;text-align:left;color:var(--ink);
+}
+.search-result:hover{color:var(--accent-bright);}
+.search-result .sr-year{font-family:'Anton',sans-serif;color:var(--ink-faint);font-size:15px;width:52px;flex:0 0 auto;}
+.search-result .sr-meta{color:var(--ink-faint);font-size:13px;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;padding:120px 0 60px;border-bottom:1px solid var(--line);
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(193,64,31,0.10),transparent 55%),
+    repeating-linear-gradient(115deg,rgba(255,255,255,0.015) 0px,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 60px);
+}
+.hero-kicker{
+  font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-bright);
+  font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+}
+.hero-kicker::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block;}
+.hero h1{
+  font-size:clamp(48px,9.5vw,128px);line-height:0.92;letter-spacing:0.001em;
+}
+.hero h1 .line2{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink);}
+.hero-script{
+  font-family:var(--script);font-size:clamp(30px,5vw,54px);color:var(--accent-bright);
+  font-weight:700;margin-top:-10px;margin-left:6px;transform:rotate(-3deg);display:inline-block;
+}
+.hero-sub{
+  max-width:540px;margin-top:18px;font-size:19px;color:var(--ink-dim);font-weight:500;
+}
+.hero-quote{
+  margin-top:30px;font-size:15px;color:var(--ink-faint);font-style:italic;font-family:'Inter',sans-serif;
+  border-left:2px solid var(--accent-dim);padding-left:14px;max-width:460px;
+}
+.hero-range{
+  margin-top:46px;display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;
+}
+.hero-range .num{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);color:var(--ink);}
+.hero-range .dash{color:var(--accent);font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,44px);}
+.hero-strip{
+  margin-top:54px;display:flex;overflow-x:auto;border-top:1px solid var(--line);
+  scrollbar-width:none;
+}
+.hero-strip::-webkit-scrollbar{display:none;}
+.hero-strip .cell{
+  flex:0 0 auto;padding:18px 22px;border-right:1px solid var(--line);min-width:118px;
+}
+.hero-strip .cell .yr{font-family:'Anton',sans-serif;font-size:20px;color:var(--accent-bright);}
+.hero-strip .cell .lbl{font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;margin-top:3px;}
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-panel);
+  overflow:hidden;padding:16px 0;
+}
+.marquee-track{display:flex;width:max-content;animation:marquee-scroll 34s linear infinite;}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
+.marquee-track span{
+  font-family:'Anton',sans-serif;font-size:22px;color:var(--ink-faint);white-space:nowrap;
+  padding:0 22px;display:flex;align-items:center;gap:22px;letter-spacing:0.02em;
+}
+.marquee-track span::after{content:"✳";color:var(--accent);font-size:14px;}
+@keyframes marquee-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.journey-cta{
+  margin-top:36px;display:inline-flex;align-items:center;gap:10px;background:var(--accent);
+  color:#0a0a09;border:none;padding:14px 22px;font-weight:800;font-size:13px;letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+.journey-cta:hover{background:var(--accent-bright);}
+
+/* ===== FILTER BAR ===== */
+.filterbar{
+  position:sticky;top:56px;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);
+  padding:14px 0;
+}
+.filter-row{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+.filter-group{display:flex;flex-direction:column;gap:8px;}
+.filter-group .fg-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{
+  background:transparent;border:1px solid var(--line);color:var(--ink-dim);font-size:12px;
+  padding:6px 11px;white-space:nowrap;font-weight:600;
+}
+.chip:hover{border-color:var(--ink-dim);color:var(--ink);}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#0a0a09;}
+.filter-count{
+  margin-left:auto;align-self:center;font-size:12px;color:var(--ink-faint);
+  padding-top:16px;
+}
+.filter-reset{
+  background:none;border:none;color:var(--accent-bright);font-size:12px;font-weight:700;
+  text-decoration:underline;padding-top:16px;
+}
+
+/* ===== ERA SCROLLER ===== */
+.era-scroller{border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;}
+.era-scroller::-webkit-scrollbar{display:none;}
+.era-scroller-inner{display:flex;max-width:var(--maxw);margin:0 auto;}
+.era-jump{
+  flex:0 0 auto;background:none;border:none;border-right:1px solid var(--line-soft);
+  padding:14px 20px;color:var(--ink-faint);font-size:12px;font-weight:700;
+  display:flex;flex-direction:column;gap:2px;text-align:left;min-width:120px;
+}
+.era-jump:hover{color:var(--ink);background:var(--bg-panel);}
+.era-jump .ej-range{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink);}
+
+/* ===== SECTION HEADERS ===== */
+.section{padding:70px 0;border-bottom:1px solid var(--line);}
+.section.tight{padding:50px 0;}
+.era-head{display:flex;gap:24px;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;}
+.era-head .yr{
+  font-family:'Anton',sans-serif;font-size:clamp(46px,7vw,84px);line-height:0.85;color:var(--ink);
+}
+.era-head .info{max-width:600px;padding-bottom:6px;}
+.era-head .info h2{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.01em;color:var(--accent-bright);margin-bottom:8px;}
+.era-head .info p{color:var(--ink-dim);font-size:15px;}
+.section-label{
+  font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-bright);
+  font-weight:700;margin-bottom:10px;
+}
+.section-title{font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,46px);margin-bottom:14px;}
+.section-desc{color:var(--ink-dim);max-width:640px;font-size:15px;margin-bottom:36px;}
+
+/* ===== ALBUM GRID ===== */
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+.album-card{
+  background:var(--bg-panel);padding:0;display:flex;flex-direction:column;text-align:left;
+  border:none;color:var(--ink);position:relative;min-height:340px;
+}
+.album-card:hover{background:var(--bg-panel-2);}
+.album-card:hover .ac-plate{border-color:var(--accent);}
+.album-card:hover .ac-arrow{background:var(--accent);color:#0a0a09;transform:rotate(0deg);}
+.ac-plate{
+  aspect-ratio:1/1;border-bottom:1px solid var(--line);margin:14px 14px 0;
+  display:flex;flex-direction:column;justify-content:space-between;padding:14px;
+  background:
+    linear-gradient(160deg,rgba(224,19,36,0.16),transparent 60%),
+    var(--bg);
+  border:1px solid var(--line-soft);position:relative;
+}
+.ac-plate .plate-yr{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink-faint);}
+.ac-plate .plate-initial{font-family:'Anton',sans-serif;font-size:15px;color:var(--ink-dim);align-self:flex-end;text-align:right;}
+.ac-arrow{
+  position:absolute;bottom:12px;right:12px;width:28px;height:28px;border:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:14px;
+  transform:rotate(-45deg);transition:all .15s;background:var(--bg-panel);
+}
+.ac-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.ac-band{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;font-weight:700;}
+.ac-title{font-size:16px;font-weight:700;line-height:1.25;}
+.ac-tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:5px;padding-top:10px;}
+.tag{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);color:var(--ink-faint);font-weight:700;}
+.tag.importance{color:var(--accent-bright);border-color:var(--accent-dim);}
+.empty-state{color:var(--ink-faint);font-size:14px;padding:40px 0;text-align:center;}
+
+/* ===== MODAL ===== */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(5,5,4,0.82);z-index:120;display:none;
+  align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 16px;
+}
+.modal-backdrop.open{display:flex;}
+.modal{
+  background:var(--bg-panel);border:1px solid var(--line);max-width:760px;width:100%;
+  margin:auto;position:relative;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;background:var(--bg);border:1px solid var(--line);
+  width:36px;height:36px;color:var(--ink);font-size:16px;z-index:2;
+}
+.modal-close:hover{border-color:var(--accent);}
+.modal-head{
+  padding:34px 30px 22px;border-bottom:1px solid var(--line);
+  display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;
+}
+.modal-plate{
+  width:96px;height:96px;flex:0 0 auto;border:1px solid var(--line-soft);
+  background:linear-gradient(160deg,rgba(193,64,31,0.18),transparent 65%),var(--bg);
+  display:flex;align-items:center;justify-content:center;
+}
+.modal-plate span{font-family:'Anton',sans-serif;font-size:26px;color:var(--ink-dim);}
+.modal-head-text{flex:1;min-width:200px;}
+.modal-head .m-band{font-size:13px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;}
+.modal-head h3{font-family:'Anton',sans-serif;font-size:clamp(22px,4vw,32px);margin:6px 0 10px;}
+.modal-meta{display:flex;flex-wrap:wrap;gap:6px;}
+.modal-body{padding:26px 30px 34px;display:flex;flex-direction:column;gap:24px;}
+.mb-block h4{
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-bright);
+  margin-bottom:8px;font-weight:800;
+}
+.mb-block p{font-size:15px;color:var(--ink-dim);}
+.gen-flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.gen-col .gen-label{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
+.gen-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;}
+.gen-col li{font-size:13px;color:var(--ink-dim);border-left:2px solid var(--line);padding-left:8px;}
+.gen-col.current li{border-left-color:var(--accent);color:var(--ink);font-weight:700;}
+.track-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+.track-list li{
+  display:flex;justify-content:space-between;align-items:center;padding:9px 0;
+  border-bottom:1px solid var(--line-soft);font-size:14px;
+}
+.link-row{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:transparent;
+  color:var(--ink);padding:9px 14px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-decoration:none;
+  text-transform:uppercase;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent-bright);}
+.btn.small{padding:6px 10px;font-size:11px;}
+
+/* ===== FAMILY TREE ===== */
+.tree{display:flex;flex-direction:column;align-items:center;gap:0;}
+.tree-node{
+  border:1px solid var(--line);background:var(--bg-panel);padding:14px 22px;text-align:center;
+  min-width:180px;
+}
+.tree-node .tn-band{font-family:'Anton',sans-serif;font-size:16px;}
+.tree-node .tn-year{font-size:11px;color:var(--ink-faint);margin-top:2px;}
+.tree-connector{width:1px;height:26px;background:var(--line);}
+.tree-branch-row{display:flex;gap:0;align-items:flex-start;justify-content:center;flex-wrap:wrap;}
+.tree-branch{display:flex;flex-direction:column;align-items:center;padding:0 10px;position:relative;}
+.lineage-note{
+  margin-top:44px;font-size:12px;color:var(--ink-faint);text-align:center;max-width:460px;
+  margin-left:auto;margin-right:auto;border-top:1px solid var(--line-soft);padding-top:16px;
+}
+
+/* ===== COMPARISON ===== */
+.compare-table{width:100%;border-collapse:collapse;}
+.compare-table th,.compare-table td{border-bottom:1px solid var(--line-soft);padding:11px 8px;text-align:left;font-size:13px;}
+.compare-table th{color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;font-size:11px;font-weight:800;}
+.compare-table td.attr{color:var(--ink-dim);font-weight:700;}
+.qual-bar{display:flex;gap:3px;align-items:center;}
+.qual-seg{width:16px;height:8px;background:var(--line);}
+.qual-seg.on{background:var(--accent);}
+.qual-word{font-size:11px;color:var(--ink-faint);margin-left:8px;}
+
+/* ===== JOURNEY ===== */
+.journey-list{display:flex;flex-direction:column;}
+.journey-item{
+  display:grid;grid-template-columns:50px 1fr auto;gap:16px;align-items:center;
+  padding:16px 0;border-bottom:1px solid var(--line-soft);
+}
+.journey-item .j-num{font-family:'Anton',sans-serif;font-size:22px;color:var(--ink-faint);}
+.journey-item .j-band{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.04em;}
+.journey-item .j-title{font-weight:700;font-size:15px;}
+.journey-item .j-links{display:flex;gap:8px;}
+
+/* ===== SPLIT SECTION ===== */
+.split-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px;}
+.split-cell{background:var(--bg-panel);padding:24px 20px;}
+.split-cell h4{font-family:'Anton',sans-serif;font-size:17px;color:var(--accent-bright);margin-bottom:10px;}
+.split-cell p{font-size:14px;color:var(--ink-dim);}
+.split-final{
+  text-align:center;margin-top:50px;font-family:'Anton',sans-serif;font-size:clamp(18px,3vw,26px);
+  color:var(--ink-faint);
+}
+
+/* ===== NEW GERMAN WAVE ===== */
+.ngw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+.ngw-card{background:var(--bg-panel);padding:24px;}
+.ngw-card h3{font-family:'Anton',sans-serif;font-size:20px;margin-bottom:6px;}
+.ngw-card .ngw-loc{font-size:12px;color:var(--ink-faint);margin-bottom:14px;}
+.ngw-release{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-top:1px solid var(--line-soft);}
+
+/* ===== FOOTER ===== */
+footer{padding:60px 0 40px;}
+.footer-statement{font-family:'Anton',sans-serif;font-size:clamp(24px,4vw,38px);max-width:640px;}
+.footer-note{color:var(--ink-dim);font-size:14px;max-width:600px;margin-top:20px;}
+.footer-sources{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);}
+.footer-sources h5{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);margin-bottom:12px;}
+.footer-sources ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+.footer-sources a{font-size:13px;color:var(--ink-dim);text-decoration:underline;}
+.footer-sources a:hover{color:var(--accent-bright);}
+.footer-meta{margin-top:30px;font-size:12px;color:var(--ink-faint);}
+
+.visually-hidden-anchor{position:relative;top:-90px;}
+
+@media (max-width:720px){
+  .wrap{padding:0 18px;}
+  .filterbar{top:52px;}
+  .modal-body{padding:20px;}
+  .modal-head{padding:26px 20px 18px;}
+  .gen-flow{grid-template-columns:1fr;gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Primary">
+  <div class="topnav-inner" id="topnavInner">
+    <a class="brand" href="#top">EVOLUTION<span>/</span>METALCORE</a>
+    <button class="navlink" data-scroll="e1979">Origins</button>
+    <button class="navlink" data-scroll="e1990">90s</button>
+    <button class="navlink" data-scroll="e2000">2000s</button>
+    <button class="navlink" data-scroll="e2010">2010s</button>
+    <button class="navlink" data-scroll="e2020">2020s</button>
+    <button class="navlink" data-scroll="e2023">Now</button>
+    <button class="navlink" data-scroll="map">Map</button>
+    <button class="navlink" data-scroll="essential">Essential Albums</button>
+    <button class="nav-search-btn" id="openSearch" aria-label="Search bands, albums, years, subgenres">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="search-close" id="closeSearch" aria-label="Close search">✕</button>
+  <div class="search-box">
+    <label for="searchInput" class="sr-only">Search bands, albums, years, songs, subgenres</label>
+    <input type="text" id="searchInput" placeholder="Band, album, year, song, subgenre…" autocomplete="off">
+    <p class="search-hint">Try "Polaris", "2013", "djent", or "breakdown".</p>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<a id="top"></a>
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-kicker">A visual record, not a highlight reel</p>
+    <h1 class="display">THE EVOLUTION<span class="line2">OF METALCORE</span></h1>
+    <span class="hero-script">it split.</span>
+    <p class="hero-sub">From hardcore basements to the collapse of genre boundaries.</p>
+    <p class="hero-quote">"Metalcore didn't evolve in a straight line. It exploded."</p>
+    <div class="hero-range">
+      <span class="num">1979</span><span class="dash">—</span><span class="num">2026</span>
+    </div>
+    <button class="journey-cta" id="startJourneyHero">Start the listening journey →</button>
+  </div>
+  <div class="hero-strip" aria-hidden="true">
+    <div class="cell"><div class="yr">1981</div><div class="lbl">Hardcore / crossover</div></div>
+    <div class="cell"><div class="yr">1991</div><div class="lbl">Metallic hardcore</div></div>
+    <div class="cell"><div class="yr">1999</div><div class="lbl">Mathcore splits off</div></div>
+    <div class="cell"><div class="yr">2002</div><div class="lbl">The modern formula</div></div>
+    <div class="cell"><div class="yr">2007</div><div class="lbl">Mainstream breakthrough</div></div>
+    <div class="cell"><div class="yr">2013</div><div class="lbl">Electronics enter</div></div>
+    <div class="cell"><div class="yr">2017</div><div class="lbl">Post-hardcore intermediate gen.</div></div>
+    <div class="cell"><div class="yr">2021</div><div class="lbl">Genre collapse</div></div>
+    <div class="cell"><div class="yr">2026</div><div class="lbl">Still splitting</div></div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<div class="filterbar">
+  <div class="wrap filter-row">
+    <div class="filter-group">
+      <span class="fg-label">Era</span>
+      <div class="chip-row" id="filterEra"></div>
+    </div>
+    <div class="filter-group">
+      <span class="fg-label">Subgenre</span>
+      <div class="chip-row" id="filterSub"></div>
+    </div>
+    <div class="filter-group">
+      <span class="fg-label">Importance</span>
+      <div class="chip-row" id="filterImp"></div>
+    </div>
+    <span class="filter-count" id="filterCount"></span>
+    <button class="filter-reset" id="resetFilters">Clear filters</button>
+  </div>
+</div>
+
+<nav class="era-scroller" aria-label="Jump to era">
+  <div class="era-scroller-inner" id="eraScroller"></div>
+</nav>
+
+<main id="timelineMain"></main>
+
+<section class="section" id="map">
+  <div class="wrap">
+    <p class="section-label">The family tree</p>
+    <h2 class="section-title">Sonic lineage</h2>
+    <p class="section-desc">This isn't a chain of direct influence in every link — some of it is documented lineage, some of it is scene continuity. Where a connection is stylistic rather than confirmed, we call it "sonic lineage," not "influenced by."</p>
+    <div class="tree" id="treeContainer"></div>
+    <p class="lineage-note">Every band on this chain also drew from dozens of peers outside it. A single line can't hold a genre — this is one legible path through it, not the only one.</p>
+  </div>
+</section>
+
+<section class="section tight" id="compare">
+  <div class="wrap">
+    <p class="section-label">How metalcore changed</p>
+    <h2 class="section-title">Four snapshots</h2>
+    <p class="section-desc">Qualitative, not measured — these are relative comparisons across the genre's mainstream center of gravity in each year, not lab data.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" id="ngw">
+  <div class="wrap">
+    <p class="section-label">Germany, 2023–2026</p>
+    <h2 class="section-title">The new German wave</h2>
+    <p class="section-desc">Three bands from the same scene, three years apart in formation, now touring and releasing together — Nuclear Blast, Out of Line, Arising Empire. Verified against label and streaming pages, September 2026.</p>
+    <div class="ngw-grid" id="ngwGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="essential">
+  <div class="wrap">
+    <p class="section-label">The canon</p>
+    <h2 class="section-title">Essential albums</h2>
+    <p class="section-desc">Not "the best" — the records you'd need to understand how the genre got from Integrity to The Narrator.</p>
+    <div class="album-grid" id="essentialGrid"></div>
+  </div>
+</section>
+
+<section class="section tight" id="journey">
+  <div class="wrap">
+    <p class="section-label">Listen in order</p>
+    <h2 class="section-title">The listening journey</h2>
+    <p class="section-desc">Roughly thirty albums, sequenced by history rather than quality, from Integrity in 1991 to Elwood Stray in 2026.</p>
+    <div class="journey-list" id="journeyList"></div>
+  </div>
+</section>
+
+<section class="section" id="split">
+  <div class="wrap">
+    <p class="section-label">2026</p>
+    <h2 class="section-title">Metalcore didn't die.<br>It split.</h2>
+    <p class="section-desc">Five directions are carrying the genre's name right now, and they barely resemble each other.</p>
+    <div class="split-grid" id="splitGrid"></div>
+    <p class="split-final">And the next branch hasn't been written yet.</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack2"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-statement">Metalcore is not a straight line.</p>
+    <p class="footer-note">The genre was born from a collision between hardcore punk and metal, and it kept transforming through dozens of scenes, generations, and cross-pollinations. The categories on this page are historical approximations — they overlap, and reasonable people disagree on where one ends and another begins.</p>
+    <p class="footer-note">Album covers here are shown as designed reference plates rather than hotlinked photography, so the page never breaks on a dead image link or misattributed art. Streaming links go to search results where a confirmed direct URL wasn't available. Dates for 2025–2026 releases were checked against label and streaming-platform listings in September 2026.</p>
+    <div class="footer-sources">
+      <h5>Sources / Research</h5>
+      <ul id="sourcesList"></ul>
+    </div>
+    <p class="footer-meta">Built as a single self-contained page. No tracking, no backend.</p>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+/* =========================================================
+   DATA
+   ========================================================= */
+const ERAS = [
+  {key:'e1979', range:'1979–89', bucket:'1979-1989', title:'Before metalcore', blurb:'Hardcore punk collides with heavy metal and speed. No band here called itself "metalcore" — the word didn\'t exist yet — but the ingredients are all present: breakdowns, gang vocals, and a scene that didn\'t respect the wall between punk and metal.'},
+  {key:'e1990', range:'1990–94', bucket:'1990-1999', title:'The birth of metallic hardcore', blurb:'Cleveland and the Northeast US hardcore scenes start writing riffs that are unmistakably metal, played by bands that still think of themselves as hardcore. Integrity is the hinge point most historians point to.'},
+  {key:'e1995', range:'1995–99', bucket:'1990-1999', title:'The genre takes shape', blurb:'The sound starts splitting into directions that are still recognizable today — straight-edge metallic hardcore, the first mathcore, and the melodic strain that would eventually go mainstream.'},
+  {key:'e2000', range:'2000–05', bucket:'2000-2009', title:'The modern metalcore formula', blurb:'Killswitch Engage crystallizes a formula — hardcore aggression, melodic death metal riffing, breakdowns, and a clean sung chorus — that would define the mainstream version of the genre for a decade.'},
+  {key:'e2005', range:'2005–09', bucket:'2000-2009', title:'The golden age', blurb:'The formula goes global. Warped Tour, MySpace, and an Australian scene led by Parkway Drive push metalcore into rock radio and arena support slots.'},
+  {key:'e2010', range:'2010–12', bucket:'2010-2019', title:'The expansion', blurb:'Bands start reaching for bigger production, post-hardcore structure, and early electronic texture. The genre stops being just "metal with clean choruses."'},
+  {key:'e2013', range:'2013–16', bucket:'2010-2019', title:'The second revolution', blurb:'Bring Me the Horizon\'s Sempiternal rewrites what a metalcore album is allowed to sound like — synths, pop songwriting, djent-adjacent riffing — and a generation of bands follows.'},
+  {key:'e2016', range:'2016–19', bucket:'2010-2019', title:'The modern language', blurb:'An intermediate generation — Polaris chief among them — takes the electronic, atmospheric, post-hardcore-informed sound of the early 2010s and turns it into a stable vocabulary that the current generation inherited wholesale.'},
+  {key:'e2020', range:'2020–22', bucket:'2020-2026', title:'Genre collapse', blurb:'The boundaries stop holding. Shoegaze, nu-metal revival, pop production, and industrial textures all show up inside records still called "metalcore."'},
+  {key:'e2023', range:'2023–26', bucket:'2020-2026', title:'The new face of metalcore', blurb:'A young, internationally distributed generation — much of it out of Germany — plus continued output from the 2016–19 cohort and outside crossovers like Poppy. Metalcore in 2026 barely agrees with itself on what it is.'},
+];
+
+// importance labels
+const IMPORTANCE = {
+  foundational:'Foundational',
+  'genre-defining':'Genre Defining',
+  essential:'Essential',
+  'modern-landmark':'Modern Landmark',
+  'new-generation':'New Generation'
+};
+const SUBGENRES = ['Metallic Hardcore','Metalcore','Melodic Metalcore','Mathcore','Progressive Metalcore','Djent','Nu-Metalcore','Atmospheric','Electronic','Hardcore Revival','Industrial','Experimental','Deathcore'];
+const ERA_BUCKETS = ['1979-1989','1990-1999','2000-2009','2010-2019','2020-2026'];
+
+function sp(q){return 'https://open.spotify.com/search/'+encodeURIComponent(q);}
+function yt(q){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(q);}
+
+let _id = 0;
+function A(o){
+  _id++;
+  return Object.assign({
+    id:'a'+_id, essential:false, journey:null, tracks:[], previous:[], next:[], country:'', why:''
+  }, o, {
+    spotify: o.spotify || sp(o.band+' '+o.album),
+    youtube: o.youtube || yt(o.band+' '+o.album)
+  });
+}
+
+const ALBUMS = [
+// ERA 1 — 1979-1989
+A({era:'e1979',year:1981,band:'Black Flag',album:'Damaged',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'The blueprint for hardcore\'s aggression and DIY ethic that metalcore would later graft heavy-metal riffing onto.',
+  tracks:[{n:'Rise Above'},{n:'TV Party'},{n:'Damaged I'}]}),
+A({era:'e1979',year:1982,band:'Bad Brains',album:'Bad Brains',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'Proved hardcore could be technically ferocious and still swing — a template later metallic hardcore bands leaned on.',
+  tracks:[{n:'Sailin\' On'},{n:'Banned in D.C.'},{n:'Pay to Cum'}]}),
+A({era:'e1979',year:1983,band:'D.R.I.',album:'Dirty Rotten LP',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'One of crossover thrash\'s founding statements — the moment hardcore speed and metal riffing stopped being separate scenes.',
+  tracks:[{n:'Committed'},{n:'Violent Pacification'}]}),
+A({era:'e1979',year:1986,band:'Cro-Mags',album:'The Age of Quarrel',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'NYHC\'s heaviest, most metal-informed record of the decade — breakdowns here are already doing what breakdowns do in metalcore twenty years later.',
+  tracks:[{n:'World Peace'},{n:'Show You No Mercy'}]}),
+A({era:'e1979',year:1986,band:'Agnostic Front',album:'Cause for Alarm',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'Pushed New York hardcore further toward metal without losing the street-level urgency of the scene it came from.',
+  tracks:[{n:'Toxic Shock'},{n:'Existence of Hate'}]}),
+A({era:'e1979',year:1987,band:'Suicidal Tendencies',album:'Join the Army',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'Crossover thrash at its most muscular — a direct line to the riffing vocabulary metallic hardcore would formalize.',
+  tracks:[{n:'War Inside My Head'},{n:'I Shot the Devil'}]}),
+
+// ERA 2 — 1990-1994
+A({era:'e1990',year:1991,band:'Integrity',album:'Those Who Fear Tomorrow',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'The record most historians point to as the actual birth of metallic hardcore — apocalyptic, occult-adjacent, and heavier than hardcore was supposed to be.',
+  tracks:[{n:'Vocal Test'},{n:'Those Who Fear Tomorrow'},{n:'Hollow'}],
+  previous:['Cro-Mags','Bad Brains'], next:['Earth Crisis','Ringworm']}),
+A({era:'e1990',year:1992,band:'Starkweather',album:'Crossbearer',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'A less-celebrated but hugely influential record in underground metallic hardcore circles, chaotic and unclassifiable at the time.',
+  tracks:[{n:'Crossbearer'},{n:'Distortion of Christ'}]}),
+A({era:'e1990',year:1993,band:'Ringworm',album:'The Promise',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'Cleveland\'s answer to Integrity — scorched-earth vocals over metal riffing, tightening the template.',
+  tracks:[{n:'Bleed'},{n:'The Promise'}]}),
+A({era:'e1990',year:1993,band:'Earth Crisis',album:'Firestorm',country:'USA',sub:['Metallic Hardcore'],imp:'foundational',
+  why:'Straight-edge militancy fused to metal riffing — the EP that put Syracuse on the map and made "moshcore" a real subculture.',
+  tracks:[{n:'Firestorm'},{n:'Forced March'}]}),
+
+// ERA 3 — 1995-1999
+A({era:'e1995',year:1995,band:'Earth Crisis',album:'Destroy the Machines',country:'USA',sub:['Metallic Hardcore'],imp:'genre-defining',
+  why:'Earth Crisis\'s full-length breakthrough — heavier production, the breakdown as centerpiece rather than accent.',
+  tracks:[{n:'Firestorm'},{n:'Filth'},{n:'Destroy the Machines'}]}),
+A({era:'e1995',year:1996,band:'Earth Crisis',album:"Gomorrah's Season Ends",country:'USA',sub:['Metallic Hardcore'],imp:'genre-defining',
+  why:'A denser, more metal-forward follow-up that widened the audience for straight-edge metallic hardcore.',
+  tracks:[{n:'Rememberance'},{n:'New Ethic'}]}),
+A({era:'e1995',year:1996,band:'Converge',album:'Petitioning the Empty Sky',country:'USA',sub:['Mathcore','Metallic Hardcore'],imp:'genre-defining',
+  why:'Converge\'s early work already shows the technical chaos that would define mathcore as its own branch.',
+  tracks:[{n:'Distance and Meaning'},{n:'Concubine'}]}),
+A({era:'e1995',year:1997,band:'Hatebreed',album:'Satisfaction Is the Death of Desire',country:'USA',sub:['Metallic Hardcore'],imp:'essential',
+  why:'Stripped metallic hardcore down to its most brutal, gym-chant-ready essentials — arguably the single most-imitated record in the subgenre.',
+  tracks:[{n:'Empty Promises'},{n:'Driven by Suffering'},{n:'Words That Bind'}],
+  previous:['Earth Crisis','Integrity'], next:['Killswitch Engage','Unearth']}),
+A({era:'e1995',year:1997,band:'Shai Hulud',album:'Hearts Once Nourished with Hope and Compassion',country:'USA',sub:['Metallic Hardcore','Melodic Metalcore'],imp:'genre-defining',
+  why:'Melodic dual-guitar leads over metallic hardcore — an early bridge toward what melodic metalcore would become.',
+  tracks:[{n:'This Ain\'t Living'},{n:'Reserve Reservoir'}]}),
+A({era:'e1995',year:1998,band:'Zao',album:'Where Blood and Fire Bring Rest',country:'USA',sub:['Metallic Hardcore','Experimental'],imp:'genre-defining',
+  why:'Metalcore\'s Christian-hardcore lineage runs squarely through this record — dark, spiritually heavy, and structurally adventurous.',
+  tracks:[{n:'Whore of All the Earth'},{n:'Trust No Flesh'}]}),
+A({era:'e1995',year:1999,band:'Poison the Well',album:'The Opposite of December',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'One of the first records to pull melody and post-hardcore songwriting fully into metalcore — a direct ancestor of the 2000s melodic wave.',
+  tracks:[{n:'Botchla'},{n:'The Opposite of December (A Season Apart)'}],
+  previous:['Shai Hulud'], next:['Killswitch Engage','As I Lay Dying']}),
+A({era:'e1995',year:1999,band:'Botch',album:'We Are the Romans',country:'USA',sub:['Mathcore'],imp:'genre-defining',
+  why:'A cornerstone of mathcore — dissonant, angular, and enormously influential on every technical metalcore band since.',
+  tracks:[{n:'C. Thomas Howell as "The Soul Man"'},{n:'To Our Friends in the Great White North'}]}),
+A({era:'e1995',year:1999,band:'The Dillinger Escape Plan',album:'Calculating Infinity',country:'USA',sub:['Mathcore'],imp:'essential',
+  why:'The genre-defining mathcore record — technical to the point of disorientation, and a permanent reference point for the subgenre.',
+  tracks:[{n:'43% Burnt'},{n:'Sugar Coated Sour'},{n:'Weekend Sex Change'}]}),
+
+// ERA 4 — 2000-2005
+A({era:'e2000',year:2000,band:'Killswitch Engage',album:'Killswitch Engage',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'The debut that first paired hardcore aggression with melodic death metal riffing under one roof — the formula in rough draft.',
+  tracks:[{n:'A Bid Farewell'},{n:'Vide Infra'}]}),
+A({era:'e2000',year:2001,band:'Converge',album:'Jane Doe',country:'USA',sub:['Mathcore','Metallic Hardcore'],imp:'genre-defining',
+  why:'Widely considered mathcore\'s definitive statement — raw, emotionally devastating, and still cited as an all-time metalcore record.',
+  tracks:[{n:'Concubine'},{n:'Fault and Fracture'},{n:'Jane Doe'}],essential:true}),
+A({era:'e2000',year:2002,band:'Norma Jean',album:'Bless the Martyr and Kiss the Child',country:'USA',sub:['Metallic Hardcore','Experimental'],imp:'genre-defining',
+  why:'Chaotic, screamo-adjacent metalcore that expanded the genre\'s emotional and structural range.',
+  tracks:[{n:'Memphis Will Be Laid to Waste'},{n:'Liberating the Sofa Kingdom'}]}),
+A({era:'e2000',year:2002,band:'Killswitch Engage',album:'Alive or Just Breathing',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'The turning point. Hardcore aggression, melodic death metal, breakdowns, and a clean sung chorus — this is where the modern mainstream metalcore formula actually crystallizes.',
+  tracks:[{n:'My Last Serenade'},{n:'Rose of Sharyn'},{n:'Fixation on the Darkness'}],
+  previous:['Poison the Well','Hatebreed'], next:['Unearth','As I Lay Dying','Parkway Drive']}),
+A({era:'e2000',year:2003,band:'Avenged Sevenfold',album:'Waking the Fallen',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'Pushed metalcore toward metal-radio songwriting and virtuosic soloing, foreshadowing the band\'s later mainstream crossover.',
+  tracks:[{n:'Unholy Confessions'},{n:'Chapter Four'}]}),
+A({era:'e2000',year:2003,band:'As I Lay Dying',album:'Frail Words Collapse',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'A defining early-2000s melodic metalcore statement — precise riffing, breakdowns as structural payoff.',
+  tracks:[{n:'94 Hours'},{n:'The Sound of Truth'}]}),
+A({era:'e2000',year:2003,band:'Every Time I Die',album:'Hot Damn!',country:'USA',sub:['Metallic Hardcore','Experimental'],imp:'genre-defining',
+  why:'Southern-fried, groove-heavy metalcore that refused to sound like anyone else in the scene.',
+  tracks:[{n:'Bored Stiff'},{n:'The New Black'}]}),
+A({era:'e2000',year:2004,band:'Killswitch Engage',album:'The End of Heartache',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'The formula fully realized and radio-ready — this is the record that took the sound national.',
+  tracks:[{n:'The End of Heartache'},{n:'My Curse'},{n:'Rose of Sharyn'}]}),
+A({era:'e2000',year:2004,band:'Unearth',album:'The Oncoming Storm',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'Precision dual-guitar melodic metalcore, tour-tested with Killswitch Engage and hugely influential on the mid-2000s wave.',
+  tracks:[{n:'The Great Dividers'},{n:'This Lying World'}]}),
+A({era:'e2000',year:2004,band:'Shadows Fall',album:'The War Within',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'Thrash-informed melodic metalcore that briefly outsold most of its peers and landed on national rock charts.',
+  tracks:[{n:'The Light That Blinds'},{n:'What Drives the Weak'}]}),
+A({era:'e2000',year:2004,band:'Misery Signals',album:'Of Malice and the Magnum Heart',country:'USA/Canada',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'A quieter but deeply influential record within melodic metalcore\'s more technical, atmospheric wing.',
+  tracks:[{n:'Ascension'},{n:'Reaching a Suicide'}]}),
+
+// ERA 5 — 2005-2009
+A({era:'e2005',year:2005,band:'Parkway Drive',album:'Killing with a Smile',country:'Australia',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'The debut that launched Australia\'s metalcore scene onto the world stage.',
+  tracks:[{n:'Feed Them to the Lions'},{n:'Idols and Anchors'}]}),
+A({era:'e2005',year:2005,band:'August Burns Red',album:'Thrill Seeker',country:'USA',sub:['Melodic Metalcore','Progressive Metalcore'],imp:'genre-defining',
+  why:'Technical, breakdown-heavy melodic metalcore that helped define the genre\'s late-2000s mainstream sound.',
+  tracks:[{n:'Composure'},{n:'Marianas Trench'}]}),
+A({era:'e2005',year:2005,band:'Trivium',album:'Ascendancy',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'Metalcore crossed with thrash-metal ambition — one of the records that pulled the genre toward metal radio.',
+  tracks:[{n:'Pull Harder on the Strings of Your Martyr'},{n:'Like Light to the Flies'}]}),
+A({era:'e2005',year:2005,band:'Bullet for My Valentine',album:'The Poison',country:'UK',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'Brought melodic metalcore into UK rock radio and MTV rotation, widening the genre\'s commercial reach.',
+  tracks:[{n:'Tears Don\'t Fall'},{n:'Four Words (to Choke Upon)'}]}),
+A({era:'e2005',year:2006,band:'All That Remains',album:'The Fall of Ideals',country:'USA',sub:['Melodic Metalcore'],imp:'essential',
+  why:'A high-water mark for the melodic metalcore formula — tight songwriting, huge choruses, technical riffing.',
+  tracks:[{n:'This Calling'},{n:'The Deepest Gray'}]}),
+A({era:'e2005',year:2007,band:'As I Lay Dying',album:'An Ocean Between Us',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'The genre\'s mid-2000s peak of commercial and critical momentum for its melodic wing.',
+  tracks:[{n:'Nothing Left'},{n:'The Sound of Truth II'}]}),
+A({era:'e2005',year:2007,band:'Parkway Drive',album:'Horizons',country:'Australia',sub:['Melodic Metalcore'],imp:'essential',
+  why:'Cemented Parkway Drive as the flagship of the Australian scene and one of the genre\'s most enduring live bands.',
+  tracks:[{n:'Boneyards'},{n:'Idols and Anchors'},{n:'Sleepwalker'}]}),
+A({era:'e2005',year:2007,band:'August Burns Red',album:'Messengers',country:'USA',sub:['Progressive Metalcore','Melodic Metalcore'],imp:'essential',
+  why:'A technical peak for melodic metalcore\'s more progressive wing, still cited as a genre landmark.',
+  tracks:[{n:'Composure'},{n:'Truth of a Liar'}]}),
+
+// ERA 6 — 2010-2012
+A({era:'e2010',year:2010,band:'Parkway Drive',album:'Deep Blue',country:'Australia',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'Bigger production and more atmosphere, signaling the genre\'s move toward larger arrangements.',
+  tracks:[{n:'Home Is for the Heartless'},{n:'Deliver Me'}]}),
+A({era:'e2010',year:2010,band:'Bring Me the Horizon',album:'There Is a Hell, Believe Me I\'ve Seen It. There Is a Heaven, Let\'s Keep It a Secret.',country:'UK',sub:['Metalcore','Progressive Metalcore'],imp:'genre-defining',
+  why:'BMTH\'s transitional record — heavier structure meets the first hints of the atmosphere and melody that would explode on Sempiternal.',
+  tracks:[{n:'Crucify Me'},{n:'It Never Ends'}]}),
+A({era:'e2010',year:2011,band:'Architects',album:'The Here and Now',country:'UK',sub:['Progressive Metalcore'],imp:'genre-defining',
+  why:'A divisive, more melodic pivot for Architects that expanded what UK metalcore could sound like commercially.',
+  tracks:[{n:'Learn to Live'},{n:'Delete, Rewind'}]}),
+
+// ERA 7 — 2013-2016
+A({era:'e2013',year:2013,band:'Bring Me the Horizon',album:'Sempiternal',country:'UK',sub:['Progressive Metalcore','Electronic'],imp:'modern-landmark',
+  why:'One of the most transformative records the genre has produced — synths, pop songwriting, and djent-adjacent riffing folded into metalcore\'s frame, opening the door for a full generation of hybrids.',
+  tracks:[{n:'Shadow Moses'},{n:'Sleepwalking'},{n:'Can You Feel My Heart'}],essential:true,
+  previous:['Bring Me the Horizon (2010)'], next:['Northlane','ERRA','Architects']}),
+A({era:'e2013',year:2013,band:'Northlane',album:'Singularity',country:'Australia',sub:['Djent','Progressive Metalcore'],imp:'essential',
+  why:'Djent-informed metalcore that established Northlane as one of the genre\'s most technically ambitious bands.',
+  tracks:[{n:'Quantum Flux'},{n:'Weightless'}]}),
+A({era:'e2013',year:2013,band:'ERRA',album:'Augment',country:'USA',sub:['Progressive Metalcore','Djent'],imp:'genre-defining',
+  why:'A key record in progressive metalcore\'s djent-adjacent wing, dense with polyrhythm and atmosphere.',
+  tracks:[{n:'Snowblind'},{n:'Andromeda'}]}),
+A({era:'e2013',year:2014,band:'Architects',album:'Lost Forever // Lost Together',country:'UK',sub:['Progressive Metalcore'],imp:'essential',
+  why:'A return to heaviness that reset Architects\' trajectory and became one of UK metalcore\'s most influential records.',
+  tracks:[{n:'Naysayer'},{n:'Broken Cross'}]}),
+A({era:'e2013',year:2015,band:'While She Sleeps',album:'Brainwashed',country:'UK',sub:['Metallic Hardcore','Melodic Metalcore'],imp:'genre-defining',
+  why:'Aggressive, politically charged UK metalcore that kept the genre\'s hardcore roots visible amid its more melodic peers.',
+  tracks:[{n:'Brainwashed'},{n:'Silence Speaks'}]}),
+A({era:'e2013',year:2016,band:'Architects',album:'All Our Gods Have Abandoned Us',country:'UK',sub:['Progressive Metalcore'],imp:'essential',
+  why:'Architects at their most technically accomplished, released not long before the death of guitarist and songwriter Tom Searle.',
+  tracks:[{n:'Nihilist'},{n:'A Match Made in Heaven'}]}),
+
+// ERA 8 — 2016-2019
+A({era:'e2016',year:2016,band:'Invent Animate',album:'Stillworld',country:'USA',sub:['Progressive Metalcore','Atmospheric'],imp:'genre-defining',
+  why:'Atmospheric, emotionally direct progressive metalcore that anchored the band\'s core sound going forward.',
+  tracks:[{n:'Stillworld'},{n:'Down and Out'}]}),
+A({era:'e2016',year:2016,band:'Silent Planet',album:'Everything Was Sound',country:'USA',sub:['Progressive Metalcore','Experimental'],imp:'genre-defining',
+  why:'Metalcore built around case-study-style lyricism on mental illness, unusually literary for the genre.',
+  tracks:[{n:'Panic Room'},{n:'Firstborn'}]}),
+A({era:'e2016',year:2017,band:'Polaris',album:'The Mortal Coil',country:'Australia',sub:['Atmospheric','Progressive Metalcore'],imp:'essential',
+  why:'Not the newest generation in 2026 — Polaris belongs to the intermediate cohort that took the atmosphere and electronics of the early 2010s and turned them into the stable vocabulary the current generation inherited outright.',
+  tracks:[{n:'Dusk to Day'},{n:'Bones'},{n:'The Guilt Stone'}],
+  previous:['Architects','Northlane'], next:['Currents','Invent Animate','Thornhill']}),
+A({era:'e2016',year:2017,band:'Currents',album:'The Place I Feel Safest',country:'USA',sub:['Progressive Metalcore','Atmospheric'],imp:'genre-defining',
+  why:'Melodic, atmospheric progressive metalcore that positioned Currents alongside Polaris in the same intermediate generation.',
+  tracks:[{n:'Rain'},{n:'The Death We Seek'}]}),
+A({era:'e2016',year:2019,band:'Thornhill',album:'The Dark Pool',country:'Australia',sub:['Atmospheric','Nu-Metalcore'],imp:'essential',
+  why:'Nu-metal groove folded into atmospheric metalcore — one of the clearest signals of where the genre was headed next.',
+  tracks:[{n:'Casino Row'},{n:'Making Fun'}]}),
+A({era:'e2016',year:2019,band:'Northlane',album:'Alien',country:'Australia',sub:['Electronic','Progressive Metalcore'],imp:'essential',
+  why:'Northlane\'s most electronic-forward record to date, expanding the palette their djent years had established.',
+  tracks:[{n:'Sleepless'},{n:'Talking Heads'}]}),
+A({era:'e2016',year:2019,band:'Knocked Loose',album:'A Different Shade of Blue',country:'USA',sub:['Hardcore Revival','Metallic Hardcore'],imp:'genre-defining',
+  why:'A hardcore revival record that resisted every melodic trend around it, setting up the band\'s dominant next decade.',
+  tracks:[{n:'A Fine Lie'},{n:'Deadringer'}]}),
+
+// ERA 9 — 2020-2022
+A({era:'e2020',year:2020,band:'Loathe',album:'I Let It In and It Took Everything',country:'UK',sub:['Shoegaze','Atmospheric'],imp:'essential',
+  why:'Shoegaze textures folded directly into metalcore structure — one of the clearest early signals of genre collapse.',
+  tracks:[{n:'Two-Way Mirror'},{n:'Aggressive Evolution'},{n:'Screaming'}]}),
+A({era:'e2020',year:2020,band:'Alpha Wolf',album:'A Quiet Place to Die',country:'Australia',sub:['Nu-Metalcore','Metallic Hardcore'],imp:'genre-defining',
+  why:'Nu-metal groove and metalcore aggression merged into one of the loudest signals of the decade\'s stylistic blending.',
+  tracks:[{n:'Akuma'},{n:'Fault Lines'}]}),
+A({era:'e2020',year:2020,band:'Make Them Suffer',album:'How to Survive a Funeral',country:'Australia',sub:['Deathcore','Electronic'],imp:'genre-defining',
+  why:'Deathcore and electronic pop songwriting under one banner — the genre-blur of the early 2020s in miniature.',
+  tracks:[{n:'Erase Me'},{n:'Bones'}]}),
+A({era:'e2020',year:2021,band:'Spiritbox',album:'Eternal Blue',country:'Canada',sub:['Progressive Metalcore','Atmospheric'],imp:'essential',
+  why:'The record that turned Spiritbox into the genre\'s biggest new act in years — atmosphere, technicality, and viral-single songwriting at once.',
+  tracks:[{n:'Holy Roller'},{n:'Circle with Me'},{n:'Constance'}],
+  next:['Spiritbox (Tsunami Sea)']}),
+A({era:'e2020',year:2021,band:'Knocked Loose',album:'A Tear in the Fabric of Life',country:'USA',sub:['Hardcore Revival'],imp:'genre-defining',
+  why:'A concept EP that deepened Knocked Loose\'s reputation as the decade\'s most uncompromising hardcore-revival act.',
+  tracks:[{n:'Return to Passenger'},{n:'Where Light Divides the Holler'}]}),
+A({era:'e2020',year:2022,band:'Bad Omens',album:'The Death of Peace of Mind',country:'USA',sub:['Electronic','Nu-Metalcore'],imp:'modern-landmark',
+  why:'Streaming-era metalcore built as much for TikTok virality as for the pit — a genuinely new distribution model for the genre.',
+  tracks:[{n:'Concrete Jungle'},{n:'Just Pretend'}]}),
+A({era:'e2020',year:2022,band:'Thornhill',album:'Heroine',country:'Australia',sub:['Atmospheric','Nu-Metalcore'],imp:'genre-defining',
+  why:'A more pop-structured, radio-facing follow-up to The Dark Pool that kept nu-metalcore\'s momentum going.',
+  tracks:[{n:'Alone'},{n:'Where We Are'}]}),
+
+// ERA 10 — 2023-2026
+A({era:'e2023',year:2023,band:'Invent Animate',album:'Heavener',country:'USA',sub:['Progressive Metalcore','Atmospheric'],imp:'essential',
+  why:'A career-best record for the band and a clear statement that the 2016–19 cohort was still setting the pace, not just handing off to the next generation.',
+  tracks:[{n:'False Life'},{n:'Circadian'}],
+  previous:['Polaris'], next:['The Narrator','Elwood Stray']}),
+A({era:'e2023',year:2023,band:'Currents',album:'The Death We Seek',country:'USA',sub:['Progressive Metalcore','Atmospheric'],imp:'genre-defining',
+  why:'Currents at their heaviest and most structurally ambitious, still operating from the intermediate generation\'s playbook.',
+  tracks:[{n:'The Death We Seek'},{n:'Monsters I Created'}]}),
+A({era:'e2023',year:2025,band:'Avralize',album:'liminal',country:'Germany',sub:['Electronic','Progressive Metalcore'],imp:'new-generation',
+  why:'The second record from the German band leading metalcore\'s electronic, danceable wing — released November 2025.',
+  tracks:[{n:'Medicine'},{n:'Liminal'},{n:'Bite My Tongue'}]}),
+A({era:'e2023',year:2024,band:'Avralize',album:'Freaks',country:'Germany',sub:['Electronic','Deathcore'],imp:'new-generation',
+  why:'The debut that put Avralize on the map — deathcore breakdowns fused with futuristic, groove-driven electronics.',
+  tracks:[{n:'Overdose'},{n:'Higher'}],
+  previous:['Thornhill'], next:['Avralize (liminal)']}),
+A({era:'e2023',year:2024,band:'The Narrator',album:'Lore',country:'Germany',sub:['Metalcore','Melodic Metalcore'],imp:'new-generation',
+  why:'The debut album that established The Narrator as one of the new German wave\'s central acts.',
+  tracks:[{n:'Nightmare'},{n:'Collapse'}],
+  previous:['Invent Animate','Currents'], next:['The Narrator (Phosphor)']}),
+A({era:'e2023',year:2024,band:'Knocked Loose',album:"You Won't Go Before You're Supposed To",country:'USA',sub:['Hardcore Revival','Metallic Hardcore'],imp:'modern-landmark',
+  why:'Knocked Loose\'s most acclaimed record — brutal, Grammy-nominated, and proof hardcore-revival metalcore could dominate a mainstream release cycle without softening at all.',
+  tracks:[{n:'Suffocate feat. Poppy'},{n:'Don\'t Reach for Me'},{n:'Blinding Faith'}],essential:true}),
+A({era:'e2023',year:2024,band:'Knocked Loose × Poppy',album:'Suffocate',country:'USA',sub:['Hardcore Revival','Industrial'],imp:'new-generation',
+  why:'The clearest symbol of 2020s genre dissolution: a pop/industrial-adjacent crossover artist and one of hardcore\'s heaviest bands on the same single, and it worked. Poppy sits outside metalcore as a genre but became part of this conversation through this record.',
+  tracks:[{n:'Suffocate'}]}),
+A({era:'e2023',year:2026,band:'Textures',album:'Genotype',country:'Netherlands',sub:['Progressive Metalcore','Djent'],imp:'new-generation',
+  why:"Textures' first album in a decade, released January 23, 2026 — a reminder that the genre's older progressive wing is still actively shaping it.",
+  tracks:[{n:'Closer to the Unknown'},{n:'At the Edge of Winter feat. Charlotte Wessels'}]}),
+A({era:'e2023',year:2026,band:'Elwood Stray',album:'Descending',country:'Germany',sub:['Nu-Metalcore','Industrial'],imp:'new-generation',
+  why:'Released January 23, 2026 via Out of Line — the second album from the new German wave\'s most nu-metal-leaning act.',
+  tracks:[{n:'Doom'},{n:'Evolve'},{n:'Shattered'},{n:'Error feat. Our Mirage'}],essential:true,
+  previous:['Invent Animate','The Narrator (Lore)'], next:[]}),
+A({era:'e2023',year:2025,band:'Spiritbox',album:'Tsunami Sea',country:'Canada',sub:['Progressive Metalcore','Electronic'],imp:'modern-landmark',
+  why:'Spiritbox\'s second full-length, released March 7, 2025 — bigger production, deeper pop songwriting, confirming Eternal Blue was no fluke.',
+  tracks:[{n:'Perfect Soul'},{n:'Soft Spine'},{n:'Tsunami Sea'}]}),
+A({era:'e2023',year:2026,band:'Converge',album:'Love Is Not Enough',country:'USA',sub:['Mathcore','Metallic Hardcore'],imp:'genre-defining',
+  why:'The first of two Converge albums released in 2026 — proof the band that helped invent mathcore is still an active, restless force in it.',
+  tracks:[{n:'Love Is Not Enough'}]}),
+A({era:'e2023',year:2026,band:'Converge',album:'Hum of Hurt',country:'USA',sub:['Mathcore','Post-Hardcore'],imp:'genre-defining',
+  why:'A surprise second Converge album in the same year, released June 5, 2026 — one of the more unusual release strategies from a genre-founding act.',
+  tracks:[{n:'Hum of Hurt'},{n:'Doom in Bloom'}]}),
+A({era:'e2023',year:2026,band:'Atreyu',album:'The End Is Not the End',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'A tenth studio album, released April 24, 2026 — the 2000s melodic wave still putting out records nearly twenty-five years later.',
+  tracks:[{n:'Dead'},{n:'Children of Light'}]}),
+A({era:'e2023',year:2026,band:'Haste the Day',album:'Dissenter',country:'USA',sub:['Melodic Metalcore'],imp:'genre-defining',
+  why:'Released May 1, 2026, eleven years after their previous record — the longest gap of the band\'s career, and a reunion record for the mid-2000s scene.',
+  tracks:[{n:'Shallows'},{n:'Oblivion'}]}),
+A({era:'e2023',year:2026,band:'Motionless in White',album:'Decades',country:'USA',sub:['Melodic Metalcore','Industrial'],imp:'modern-landmark',
+  why:'Released July 17, 2026 — industrial-tinged metalcore from a band that has spent two decades pulling the genre toward goth and shock-rock aesthetics.',
+  tracks:[{n:'Afraid of the Dark'},{n:'Playing God'}]}),
+A({era:'e2023',year:2026,band:'The Narrator',album:'Phosphor',country:'Germany',sub:['Metalcore','Electronic'],imp:'new-generation',
+  why:'The sophomore album, released May 8, 2026 via Nuclear Blast — features a guest spot from fellow new-wave German act Avralize and pushes the band into more electronic territory.',
+  tracks:[{n:'Phosphor'},{n:'Aurora'},{n:'Modern Age Blasphemy'},{n:'Stasis feat. Avralize'},{n:'Pills From the Start'},{n:'Agnosia'},{n:'Two Lives'},{n:'Dissection'},{n:'Iron Grip'},{n:'9010'}],
+  essential:true, previous:['The Narrator (Lore)','Avralize'], next:[]}),
+];
+
+// assign journey order (curated sequence of ~24 records tracing the lineage)
+const JOURNEY_SEQUENCE = [
+  ['Integrity','Those Who Fear Tomorrow'],
+  ['Earth Crisis','Destroy the Machines'],
+  ['Converge','Jane Doe'],
+  ['Hatebreed','Satisfaction Is the Death of Desire'],
+  ['Poison the Well','The Opposite of December'],
+  ['Killswitch Engage','Alive or Just Breathing'],
+  ['Unearth','The Oncoming Storm'],
+  ['All That Remains','The Fall of Ideals'],
+  ['Parkway Drive','Horizons'],
+  ['August Burns Red','Messengers'],
+  ['Bring Me the Horizon','Sempiternal'],
+  ['Architects','Lost Forever // Lost Together'],
+  ['Northlane','Singularity'],
+  ['Polaris','The Mortal Coil'],
+  ['Currents','The Place I Feel Safest'],
+  ['Thornhill','The Dark Pool'],
+  ['Loathe','I Let It In and It Took Everything'],
+  ['Spiritbox','Eternal Blue'],
+  ['Knocked Loose','A Different Shade of Blue'],
+  ['Invent Animate','Heavener'],
+  ['The Narrator','Lore'],
+  ['Avralize','Freaks'],
+  ['Elwood Stray','Descending'],
+  ['The Narrator','Phosphor'],
+];
+JOURNEY_SEQUENCE.forEach((pair,i)=>{
+  const found = ALBUMS.find(a=>a.band===pair[0] && a.album===pair[1]);
+  if(found) found.journey = i+1;
+});
+
+// normalize subgenre field naming (sub -> subgenre for consistency)
+ALBUMS.forEach(a=>{a.subgenre=a.sub;});
+
+// curated "essential albums" canon — indispensable records for understanding the arc,
+// judged separately from the per-record "Essential" importance tag.
+const ESSENTIAL_CANON = [
+  ['Integrity','Those Who Fear Tomorrow'],
+  ['Earth Crisis','Destroy the Machines'],
+  ['Converge','Jane Doe'],
+  ['Poison the Well','The Opposite of December'],
+  ['Killswitch Engage','Alive or Just Breathing'],
+  ['Killswitch Engage','The End of Heartache'],
+  ['Unearth','The Oncoming Storm'],
+  ['All That Remains','The Fall of Ideals'],
+  ['Parkway Drive','Horizons'],
+  ['August Burns Red','Messengers'],
+  ['Bring Me the Horizon','Sempiternal'],
+  ['Northlane','Singularity'],
+  ['Architects','Lost Forever // Lost Together'],
+  ['Architects','All Our Gods Have Abandoned Us'],
+  ['Polaris','The Mortal Coil'],
+  ['Northlane','Alien'],
+  ['Thornhill','The Dark Pool'],
+  ['Loathe','I Let It In and It Took Everything'],
+  ['Spiritbox','Eternal Blue'],
+  ['Knocked Loose',"You Won't Go Before You're Supposed To"],
+  ['Invent Animate','Heavener'],
+  ['The Narrator','Phosphor'],
+  ['Elwood Stray','Descending'],
+];
+ALBUMS.forEach(a=>{a.essential=false;});
+ESSENTIAL_CANON.forEach(pair=>{
+  const found = ALBUMS.find(a=>a.band===pair[0] && a.album===pair[1]);
+  if(found) found.essential = true;
+});
+
+/* =========================================================
+   STATE
+   ========================================================= */
+const state = { era:'All', sub:'All', imp:'All', query:'' };
+
+/* =========================================================
+   RENDER: FILTER CHIPS
+   ========================================================= */
+function buildChips(containerId, values, key){
+  const el = document.getElementById(containerId);
+  const all = ['All', ...values];
+  el.innerHTML = all.map(v=>`<button class="chip${v==='All'?' active':''}" data-key="${key}" data-val="${v}">${v}</button>`).join('');
+}
+buildChips('filterEra', ERA_BUCKETS, 'era');
+buildChips('filterSub', SUBGENRES, 'sub');
+buildChips('filterImp', Object.values(IMPORTANCE), 'imp');
+
+document.querySelectorAll('.chip-row').forEach(row=>{
+  row.addEventListener('click', e=>{
+    const btn = e.target.closest('.chip');
+    if(!btn) return;
+    const key = btn.dataset.key, val = btn.dataset.val;
+    state[key] = val;
+    row.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c===btn));
+    render();
+  });
+});
+document.getElementById('resetFilters').addEventListener('click', ()=>{
+  state.era='All'; state.sub='All'; state.imp='All';
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.val==='All'));
+  render();
+});
+
+/* =========================================================
+   FILTER LOGIC
+   ========================================================= */
+function importanceLabel(key){return IMPORTANCE[key]||key;}
+function matches(album){
+  if(state.era!=='All'){
+    const eraDef = ERAS.find(e=>e.key===album.era);
+    if(!eraDef || eraDef.bucket!==state.era) return false;
+  }
+  if(state.sub!=='All' && !album.subgenre.includes(state.sub)) return false;
+  if(state.imp!=='All' && importanceLabel(album.imp)!==state.imp) return false;
+  return true;
+}
+
+/* =========================================================
+   RENDER: TIMELINE
+   ========================================================= */
+function albumCardHTML(a){
+  const initials = a.band.split(' ').map(w=>w[0]).slice(0,3).join('');
+  return `<button class="album-card" data-id="${a.id}">
+    <div class="ac-plate" aria-hidden="true">
+      <span class="plate-yr">${a.year}</span>
+      <span class="plate-initial">${initials}</span>
+      <span class="ac-arrow">↗</span>
+    </div>
+    <div class="ac-body">
+      <div class="ac-band">${a.band}</div>
+      <div class="ac-title">${a.album}</div>
+      <div class="ac-tags">
+        <span class="tag importance">${importanceLabel(a.imp)}</span>
+        ${a.subgenre.slice(0,1).map(s=>`<span class="tag">${s}</span>`).join('')}
+      </div>
+    </div>
+  </button>`;
+}
+
+function render(){
+  const main = document.getElementById('timelineMain');
+  let visibleCount = 0;
+  let html = '';
+  ERAS.forEach(eraDef=>{
+    const items = ALBUMS.filter(a=>a.era===eraDef.key && matches(a));
+    if(state.era!=='All' && eraDef.bucket!==state.era) return;
+    visibleCount += items.length;
+    html += `<section class="section" id="${eraDef.key}">
+      <div class="wrap">
+        <div class="era-head">
+          <div class="yr display">${eraDef.range}</div>
+          <div class="info">
+            <h2>${eraDef.title}</h2>
+            <p>${eraDef.blurb}</p>
+          </div>
+        </div>
+        ${items.length ? `<div class="album-grid">${items.map(albumCardHTML).join('')}</div>` : `<p class="empty-state">No albums in this era match the current filters.</p>`}
+      </div>
+    </section>`;
+  });
+  main.innerHTML = html;
+  document.getElementById('filterCount').textContent = visibleCount+' albums shown';
+  attachCardHandlers();
+}
+
+function attachCardHandlers(){
+  document.querySelectorAll('.album-card').forEach(btn=>{
+    btn.addEventListener('click', ()=>openModal(btn.dataset.id));
+  });
+}
+
+/* =========================================================
+   ERA SCROLLER
+   ========================================================= */
+document.getElementById('eraScroller').innerHTML = ERAS.map(e=>
+  `<button class="era-jump" data-scroll="${e.key}"><span class="ej-range">${e.range}</span><span>${e.title}</span></button>`
+).join('');
+
+document.addEventListener('click', e=>{
+  const btn = e.target.closest('[data-scroll]');
+  if(!btn) return;
+  const target = document.getElementById(btn.dataset.scroll);
+  if(target) target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+});
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+function findByLabel(label){
+  // labels used in previous/next may include parenthetical album disambiguation
+  const cleanBand = label.replace(/\s*\(.*\)$/,'');
+  return ALBUMS.find(a=>a.band===cleanBand) || null;
+}
+
+function modalHTML(a){
+  const initials = a.band.split(' ').map(w=>w[0]).slice(0,3).join('');
+  const prevList = a.previous.length ? a.previous.map(p=>`<li>${p}</li>`).join('') : '<li>No documented prior generation</li>';
+  const nextList = a.next.length ? a.next.map(p=>`<li>${p}</li>`).join('') : '<li>Too recent to trace forward</li>';
+  return `
+  <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+  <div class="modal-head">
+    <div class="modal-plate" aria-hidden="true"><span>${initials}</span></div>
+    <div class="modal-head-text">
+      <div class="m-band">${a.band} · ${a.year} · ${a.country||'—'}</div>
+      <h3 id="modalTitle">${a.album}</h3>
+      <div class="modal-meta">
+        <span class="tag importance">${importanceLabel(a.imp)}</span>
+        ${a.subgenre.map(s=>`<span class="tag">${s}</span>`).join('')}
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="mb-block">
+      <h4>Why it matters</h4>
+      <p>${a.why}</p>
+    </div>
+    ${a.tracks.length ? `<div class="mb-block">
+      <h4>Recommended tracks</h4>
+      <ul class="track-list">
+        ${a.tracks.map(t=>`<li><span>${t.n}</span><a class="btn small" href="${yt(a.band+' '+t.n)}" target="_blank" rel="noopener">Watch</a></li>`).join('')}
+      </ul>
+    </div>` : ''}
+    <div class="mb-block">
+      <h4>Where did this come from?</h4>
+      <div class="gen-flow">
+        <div class="gen-col"><div class="gen-label">Previous generation</div><ul>${prevList}</ul></div>
+        <div class="gen-col current"><div class="gen-label">This record</div><ul><li>${a.band} — ${a.album}</li></ul></div>
+        <div class="gen-col"><div class="gen-label">Next generation</div><ul>${nextList}</ul></div>
+      </div>
+    </div>
+    <div class="mb-block">
+      <h4>Listen</h4>
+      <div class="link-row">
+        <a class="btn" href="${a.spotify}" target="_blank" rel="noopener">▶ Spotify</a>
+        <a class="btn" href="${a.youtube}" target="_blank" rel="noopener">▶ YouTube</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+let lastFocused = null;
+function openModal(id){
+  const a = ALBUMS.find(x=>x.id===id);
+  if(!a) return;
+  lastFocused = document.activeElement;
+  document.getElementById('modalContent').innerHTML = modalHTML(a);
+  const backdrop = document.getElementById('modalBackdrop');
+  backdrop.classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.getElementById('modalCloseBtn').focus();
+}
+function closeModal(){
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow='';
+  if(lastFocused) lastFocused.focus();
+}
+document.getElementById('modalBackdrop').addEventListener('click', e=>{
+  if(e.target.id==='modalBackdrop') closeModal();
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){
+    closeModal();
+    closeSearch();
+  }
+});
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+function openSearch(){
+  searchOverlay.classList.add('open');
+  searchInput.value='';
+  document.getElementById('searchResults').innerHTML='';
+  setTimeout(()=>searchInput.focus(), 30);
+}
+function closeSearch(){ searchOverlay.classList.remove('open'); }
+document.getElementById('openSearch').addEventListener('click', openSearch);
+document.getElementById('closeSearch').addEventListener('click', closeSearch);
+
+searchInput.addEventListener('input', ()=>{
+  const q = searchInput.value.trim().toLowerCase();
+  const results = document.getElementById('searchResults');
+  if(!q){ results.innerHTML=''; return; }
+  const hits = ALBUMS.filter(a=>{
+    return a.band.toLowerCase().includes(q) ||
+      a.album.toLowerCase().includes(q) ||
+      String(a.year).includes(q) ||
+      a.subgenre.some(s=>s.toLowerCase().includes(q)) ||
+      a.tracks.some(t=>t.n.toLowerCase().includes(q)) ||
+      importanceLabel(a.imp).toLowerCase().includes(q);
+  }).slice(0,40);
+  results.innerHTML = hits.length ? hits.map(a=>`
+    <button class="search-result" data-id="${a.id}">
+      <span class="sr-year display">${a.year}</span>
+      <span><strong>${a.band}</strong> — ${a.album}<br><span class="sr-meta">${a.subgenre.join(', ')} · ${importanceLabel(a.imp)}</span></span>
+    </button>`).join('') : `<p class="search-hint">No matches for "${q}".</p>`;
+  results.querySelectorAll('.search-result').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ closeSearch(); openModal(btn.dataset.id); });
+  });
+});
+
+/* =========================================================
+   FAMILY TREE
+   ========================================================= */
+const TREE = [
+  {band:'Integrity', year:'1991'},
+  {band:'Earth Crisis', year:'1995'},
+  {band:'Hatebreed', year:'1997'},
+  {band:'Killswitch Engage', year:'2002'},
+  {branch:['Architects','Parkway Drive','Bring Me the Horizon'], year:'2005–13'},
+  {branch:['Polaris','Currents','Northlane'], year:'2013–17'},
+  {branch:['Invent Animate','Thornhill','Make Them Suffer'], year:'2016–20'},
+  {branch:['The Narrator','Elwood Stray','Avralize'], year:'2023–26'},
+];
+function treeHTML(){
+  let html='';
+  TREE.forEach((node,i)=>{
+    if(i>0) html += `<div class="tree-connector" aria-hidden="true"></div>`;
+    if(node.branch){
+      html += `<div class="tree-branch-row">${node.branch.map(b=>`
+        <div class="tree-branch">
+          <div class="tree-node"><div class="tn-band">${b}</div><div class="tn-year">${node.year}</div></div>
+        </div>`).join('')}</div>`;
+    } else {
+      html += `<div class="tree-node"><div class="tn-band">${node.band}</div><div class="tn-year">${node.year}</div></div>`;
+    }
+  });
+  return html;
+}
+document.getElementById('treeContainer').innerHTML = treeHTML();
+
+/* =========================================================
+   COMPARISON TABLE
+   ========================================================= */
+const COMPARE_ATTRS = ['Tempo','Tuning','Breakdowns','Melody','Electronics','Production polish','Clean vocals','Song structure'];
+const COMPARE_DATA = {
+  1995: [3,2,2,1,0,1,0,2],
+  2005: [3,3,4,3,0,3,3,3],
+  2015: [2,3,3,3,3,4,4,3],
+  2025: [2,3,3,3,4,4,3,4],
+};
+const QUAL_WORDS = ['—','Low','Medium','High','Very High'];
+function compareTableHTML(){
+  const years = Object.keys(COMPARE_DATA);
+  let html = `<thead><tr><th>Attribute</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead><tbody>`;
+  COMPARE_ATTRS.forEach((attr,ai)=>{
+    html += `<tr><td class="attr">${attr}</td>`;
+    years.forEach(y=>{
+      const lvl = COMPARE_DATA[y][ai];
+      html += `<td><div class="qual-bar">${[1,2,3,4].map(n=>`<span class="qual-seg${n<=lvl?' on':''}"></span>`).join('')}<span class="qual-word">${QUAL_WORDS[lvl]}</span></div></td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody>';
+  return html;
+}
+document.getElementById('compareTable').innerHTML = compareTableHTML();
+
+/* =========================================================
+   NEW GERMAN WAVE
+   ========================================================= */
+const NGW = [
+  {name:'The Narrator', loc:'Germany · Nuclear Blast', releases:[
+    {t:'Lore', y:'2024'}, {t:'Phosphor', y:'8 May 2026'}
+  ]},
+  {name:'Elwood Stray', loc:'Germany · Out of Line', releases:[
+    {t:'Gone With the Flow', y:'2023'}, {t:'Descending', y:'23 Jan 2026'}
+  ]},
+  {name:'Avralize', loc:'Rottweil, Germany · Arising Empire', releases:[
+    {t:'Freaks', y:'2024'}, {t:'liminal', y:'14 Nov 2025'}
+  ]},
+];
+document.getElementById('ngwGrid').innerHTML = NGW.map(b=>`
+  <div class="ngw-card">
+    <h3>${b.name}</h3>
+    <div class="ngw-loc">${b.loc}</div>
+    ${b.releases.map(r=>`<div class="ngw-release"><span>${r.t}</span><span>${r.y}</span></div>`).join('')}
+    <div class="link-row" style="margin-top:14px;">
+      <a class="btn small" href="${sp(b.name)}" target="_blank" rel="noopener">Spotify</a>
+      <a class="btn small" href="${yt(b.name)}" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+`).join('');
+
+/* =========================================================
+   ESSENTIAL ALBUMS
+   ========================================================= */
+document.getElementById('essentialGrid').innerHTML = ALBUMS.filter(a=>a.essential).map(albumCardHTML).join('');
+
+/* =========================================================
+   LISTENING JOURNEY
+   ========================================================= */
+function journeyHTML(){
+  const items = ALBUMS.filter(a=>a.journey).sort((a,b)=>a.journey-b.journey);
+  return items.map(a=>`
+    <div class="journey-item">
+      <div class="j-num display">${String(a.journey).padStart(2,'0')}</div>
+      <div>
+        <div class="j-band">${a.band} · ${a.year}</div>
+        <div class="j-title">${a.album}</div>
+      </div>
+      <div class="j-links">
+        <a class="btn small" href="${a.spotify}" target="_blank" rel="noopener">Spotify</a>
+        <a class="btn small" href="${a.youtube}" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>`).join('');
+}
+document.getElementById('journeyList').innerHTML = journeyHTML();
+document.getElementById('startJourneyHero').addEventListener('click', ()=>{
+  document.getElementById('journey').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+/* =========================================================
+   SPLIT SECTION
+   ========================================================= */
+const SPLIT = [
+  {label:'Hardcore', bands:'Knocked Loose', desc:'Uncompromising, breakdown-first, resisting nearly every trend around it.'},
+  {label:'Progressive', bands:'Invent Animate', desc:'Atmosphere, technical structure, and long-form songwriting.'},
+  {label:'Atmospheric', bands:'Thornhill, Silent Planet', desc:'Nu-metal groove and shoegaze texture inside metalcore\'s frame.'},
+  {label:'Electronic', bands:'Avralize, Northlane', desc:'Synths and programmed elements as load-bearing, not decorative.'},
+  {label:'Pop / Alternative', bands:'Spiritbox, Poppy, Bad Omens', desc:'Streaming-native songwriting built for virality as much as the pit.'},
+];
+document.getElementById('splitGrid').innerHTML = SPLIT.map(s=>`
+  <div class="split-cell">
+    <h4>${s.label}</h4>
+    <p><strong>${s.bands}</strong></p>
+    <p>${s.desc}</p>
+  </div>`).join('');
+
+/* =========================================================
+   SOURCES
+   ========================================================= */
+const SOURCES = [
+  {t:'The Narrator — Phosphor (Nuclear Blast / Grande Rock)', u:'https://grande-rock.com/news/the-narrator-to-release-new-studio-album-phosphor-on-may-8th-2026/'},
+  {t:'Elwood Stray — Descending (Out of Line)', u:'https://www.outoflineshop.de/ElwoodStray/'},
+  {t:'Avralize — official site', u:'https://avralize.com/'},
+  {t:'Spiritbox — Tsunami Sea announcement (Blabbermouth)', u:'https://blabbermouth.net/news/spiritbox-announces-new-album-tsunami-sea'},
+  {t:'Textures — Genotype (Wikipedia)', u:'https://en.wikipedia.org/wiki/Genotype_(album)'},
+  {t:'Converge — Hum of Hurt (Wikipedia)', u:'https://en.wikipedia.org/wiki/Hum_of_Hurt'},
+  {t:'Atreyu — The End Is Not the End (Wikipedia)', u:'https://en.wikipedia.org/wiki/The_End_Is_Not_the_End_(Atreyu_album)'},
+];
+document.getElementById('sourcesList').innerHTML = SOURCES.map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${s.t}</a></li>`).join('');
+
+/* =========================================================
+   ACTIVE NAV HIGHLIGHT ON SCROLL
+   ========================================================= */
+const navLinks = document.querySelectorAll('.navlink[data-scroll]');
+const sectionKeys = ['e1979','e1990','e2000','e2010','e2020','e2023','map','essential'];
+function updateActiveNav(){
+  let current = sectionKeys[0];
+  sectionKeys.forEach(key=>{
+    const el = document.getElementById(key);
+    if(el && el.getBoundingClientRect().top < 140) current = key;
+  });
+  navLinks.forEach(l=>l.classList.toggle('active', l.dataset.scroll===current));
+}
+window.addEventListener('scroll', ()=>requestAnimationFrame(updateActiveNav), {passive:true});
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+function buildMarquee(elId, phrases){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  const doubled = phrases.concat(phrases);
+  el.innerHTML = doubled.map(p=>`<span>${p}</span>`).join('');
+}
+buildMarquee('marqueeTrack', ['1979–2026','THE GENRE SPLIT, NOT DIED','METALLIC HARDCORE','MATHCORE','DJENT','ATMOSPHERIC','ELECTRONIC','HARDCORE REVIVAL']);
+buildMarquee('marqueeTrack2', ['NO STRAIGHT LINE','FOUNDATIONAL','GENRE DEFINING','ESSENTIAL','MODERN LANDMARK','NEW GENERATION','SONIC LINEAGE']);
+
+/* =========================================================
+   INIT
+   ========================================================= */
+render();
+updateActiveNav();
+</script>
+</body>
+</html>
